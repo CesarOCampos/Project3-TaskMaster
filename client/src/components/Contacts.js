@@ -71,9 +71,29 @@ const Contacts = () => {
             alt="George Huliaris"
           /> */}
           <Typography
-            variant="h5"
+            variant="h1"
             style={{
               color: "#39603D",
+              textAlign: "center",
+              textTransform: "uppercase",
+            }}
+          >
+            This changed!
+          </Typography>
+          <Typography
+            variant="h3"
+            style={{
+              color: "#3C403D",
+              textAlign: "center",
+              textTransform: "uppercase",
+            }}
+          >
+            This changed!
+          </Typography>
+          <Typography
+            variant="h3"
+            style={{
+              color: "#DADED4",
               textAlign: "center",
               textTransform: "uppercase",
             }}

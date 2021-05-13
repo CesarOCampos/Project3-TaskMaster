@@ -22,7 +22,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
-    background: "#233",
+    background: "#A3BCB6",
     height: "500vh",
     opacity: ".96",
   },

@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
-    background: "#233",
+    background: "#A3BCB6",
     height: "575vh",
     opacity: ".95",
   },

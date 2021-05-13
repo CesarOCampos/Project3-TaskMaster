@@ -11,10 +11,10 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
   title: {
-    color: "#A3BCB6",
+    color: "#3C403D",
   },
   subtitle: {
-    color: "tan",
+    color: "#39603D",
     marginBottom: "3rem",
   },
   typedContainer: {
@@ -31,14 +31,14 @@ const useStyles = makeStyles((theme) => ({
 const Header = () => {
   const classes = useStyles();
   return (
-    <div style={{ background: "#233", height: "150vh", opacity: ".95" }}>
+    <div style={{ background: "#A3BCB6", height: "150vh", opacity: ".95" }}>
       <Box className={classes.typedContainer}>
         <Grid container justify="center">
           {/* <Avatar className={classes.avatar} src={avatar} alt="" /> */}
         </Grid>
         <Typography className={classes.title} variant="h4">
           <Typed
-            strings={["Task Master"]}
+            strings={["TaskMaster"]}
             typeSpeed={210}
             onComplete={(self) => self.cursor.remove()}
           />
