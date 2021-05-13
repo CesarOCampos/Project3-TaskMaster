@@ -8,7 +8,7 @@ import {
   Box,
   // Avatar,
 } from "@material-ui/core";
-import SendIcon from "@material-ui/icons/Send";
+// import SendIcon from "@material-ui/icons/Send";
 import Navbar from "./Navbar";
 // import avatar from "../luckyme.png";
 
