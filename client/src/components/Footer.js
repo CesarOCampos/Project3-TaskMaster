@@ -32,7 +32,7 @@ const Footer = () => {
         href={""}
         target="blank"
       />
-
+      
       {/* </BottomNavigationAction> */}
       <BottomNavigationAction
         className={classes.root}
