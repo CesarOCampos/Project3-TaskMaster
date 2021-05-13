@@ -47,7 +47,7 @@ const menuItems = [
   {
     listIcon: <AssignmentLateIcon />,
     listText: "Current Project",
-    listPath: "/resume",
+    listPath: "/projects",
   },
   {
     listIcon: <Apps />,
