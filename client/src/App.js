@@ -7,8 +7,6 @@ import Projects from "./pages/projects/Projects";
 import Portfolio from "./components/Portfolio";
 import Contacts from "./components/Contacts";
 
-
-
 function App() {
   return (
     <>
