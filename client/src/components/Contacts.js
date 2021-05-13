@@ -8,7 +8,7 @@ import {
   Box,
   // Avatar,
 } from "@material-ui/core";
-import SendIcon from "@material-ui/icons/Send";
+// import SendIcon from "@material-ui/icons/Send";
 import Navbar from "./Navbar";
 // import avatar from "../luckyme.png";
 
@@ -22,8 +22,8 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     marginTop: "1rem",
-    color: "tomato",
-    borderColor: "tomato",
+    color: "#A3BCB6",
+    borderColor: "#A3BCB6",
   },
   // avatar: {
   //   width: theme.spacing(15),
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 const InputField = withStyles({
   root: {
     "& label.Mui-focused": {
-      color: "tomato",
+      color: "#A3BCB6",
     },
     "& label": {
       color: "tan",
@@ -45,7 +45,7 @@ const InputField = withStyles({
         borderColor: "tan",
       },
       "&:hover fieldset": {
-        borderColor: "tomato",
+        borderColor: "#A3BCB6",
       },
       "&.Mui-focused fieldset": {
         borderColor: "tan",
@@ -59,7 +59,7 @@ const Contacts = () => {
   return (
     <Box
       component="div"
-      style={{ background: "#233", height: "150vh", opacity: ".95" }}
+      style={{ background: "#A3BCB6", height: "150vh", opacity: ".95" }}
     >
       <Navbar />
 
@@ -73,12 +73,12 @@ const Contacts = () => {
           <Typography
             variant="h5"
             style={{
-              color: "tomato",
+              color: "#39603D",
               textAlign: "center",
               textTransform: "uppercase",
             }}
           >
-            Hire or contact me!
+            This changed!
           </Typography>
         </Box>
       </Grid>

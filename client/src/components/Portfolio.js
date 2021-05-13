@@ -69,7 +69,7 @@ const Portfolio = () => {
                 href=""
                 target="_blank"
                 size="small"
-                color="tomato"
+                color="#A3BCB6"
                 variant="contained"
                 startIcon={<GitHubIcon />}
               >
@@ -78,7 +78,7 @@ const Portfolio = () => {
 
               <Button
                 size="small"
-                color="tomato"
+                color="#A3BCB6"
                 href=""
                 target="_blank"
                 variant="contained"
@@ -113,7 +113,7 @@ const Portfolio = () => {
                 href=""
                 target="_blank"
                 size="small"
-                color="tomato"
+                color="#A3BCB6"
                 variant="contained"
                 startIcon={<GitHubIcon />}
               >
@@ -122,7 +122,7 @@ const Portfolio = () => {
 
               <Button
                 size="small"
-                color="tomato"
+                color="#A3BCB6"
                 href=""
                 target="_blank"
                 variant="contained"
@@ -157,7 +157,7 @@ const Portfolio = () => {
               <Button
                 href=""
                 size="small"
-                color="tomato"
+                color="#A3BCB6"
                 target="_blank"
                 variant="contained"
                 startIcon={<GitHubIcon />}
@@ -167,7 +167,7 @@ const Portfolio = () => {
 
               <Button
                 size="small"
-                color="tomato"
+                color="#A3BCB6"
                 href=""
                 target="_blank"
                 variant="contained"
@@ -203,7 +203,7 @@ const Portfolio = () => {
                 href=""
                 target="_blank"
                 size="small"
-                color="tomato"
+                color="#A3BCB6"
                 variant="contained"
                 startIcon={<GitHubIcon />}
               >
@@ -212,7 +212,7 @@ const Portfolio = () => {
 
               <Button
                 size="small"
-                color="tomato"
+                color="#A3BCB6"
                 href=""
                 target="_blank"
                 variant="contained"

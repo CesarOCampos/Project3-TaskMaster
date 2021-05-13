@@ -17,13 +17,14 @@ import {
   //   Avatar,
   List,
 } from "@material-ui/core";
-import { AssignmentInd, Home, Apps, ContactMail } from "@material-ui/icons";
+import AssignmentLateIcon from "@material-ui/icons/AssignmentLate";
+import { Home, Apps, ContactMail } from "@material-ui/icons";
 // import avatar from "../avatarThinking.png";
 
 const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
     width: 250,
-    background: "#511",
+    background: "#2d545e",
     height: "100%",
   },
   avatar: {
@@ -44,18 +45,18 @@ const menuItems = [
     listPath: "/",
   },
   {
-    listIcon: <AssignmentInd />,
-    listText: "Résumé",
+    listIcon: <AssignmentLateIcon />,
+    listText: "Current Project",
     listPath: "/resume",
   },
   {
     listIcon: <Apps />,
-    listText: "Portfolio",
+    listText: "Tasks",
     listPath: "/portfolio",
   },
   {
     listIcon: <ContactMail />,
-    listText: "Contact Me",
+    listText: "Drawing Board",
     listPath: "/contacts",
   },
 ];
@@ -100,7 +101,7 @@ const Navbar = () => {
         <AppBar position="static" style={{ background: "#222" }}>
           <Toolbar>
             <IconButton onClick={toggleSlider("left", true)}>
-              <MenuIcon style={{ color: "tomato" }} />
+              <MenuIcon style={{ color: "#A3BCB6" }} />
             </IconButton>
             <Typography variant="h5" style={{ color: "tan" }}>
               Task Master

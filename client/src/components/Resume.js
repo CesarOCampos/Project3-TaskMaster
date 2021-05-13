@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
       right: "0.625rem",
       top: "calc(50% - 5px)",
       borderStyle: "solid",
-      borderColor: "tomato tomato transparent transparent",
+      borderColor: "#A3BCB6 #A3BCB6 transparent transparent",
       borderWidth: "0.625rem",
       transform: "rotate(45deg)",
     },
@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
       "&:nth-of-type(2n):before": {
         right: "auto",
         left: "-0.625rem",
-        borderColor: "transparent transparent tomato tomato",
+        borderColor: "transparent transparent #A3BCB6 #A3BCB6",
       },
     },
   },
@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "9.375rem",
     margin: "0 3rem 0 auto",
     fontSize: "1.8rem",
-    background: "tomato",
+    background: "#A3BCB6",
     color: "white",
     lineHeight: 1,
     padding: "0.5rem 0 1rem",
@@ -95,7 +95,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   heading: {
-    color: "tomato",
+    color: "#A3BCB6",
     padding: "3rem 0",
     textTransform: "uppercase",
   },
@@ -146,7 +146,7 @@ const Resume = () => {
             <Typography
               variant="body1"
               align="center"
-              style={{ color: "tomato" }}
+              style={{ color: "#A3BCB6" }}
             >
               Trilogy Bootcamp in association with Rice University
               <br />
@@ -187,7 +187,7 @@ const Resume = () => {
             <Typography
               variant="body1"
               align="center"
-              style={{ color: "tomato" }}
+              style={{ color: "#A3BCB6" }}
             >
               The Omega Grill
             </Typography>
@@ -216,7 +216,7 @@ const Resume = () => {
             <Typography
               variant="body1"
               align="center"
-              style={{ color: "tomato" }}
+              style={{ color: "#A3BCB6" }}
             >
               Apple
             </Typography>
@@ -246,7 +246,7 @@ const Resume = () => {
             <Typography
               variant="body1"
               align="center"
-              style={{ color: "tomato" }}
+              style={{ color: "#A3BCB6" }}
             >
               MustacheStuff.com
             </Typography>
@@ -276,7 +276,7 @@ const Resume = () => {
             <Typography
               variant="body1"
               align="center"
-              style={{ color: "tomato" }}
+              style={{ color: "#A3BCB6" }}
             >
               Apple
             </Typography>
@@ -306,7 +306,7 @@ const Resume = () => {
             <Typography
               variant="body1"
               align="center"
-              style={{ color: "tomato" }}
+              style={{ color: "#A3BCB6" }}
             >
               Gap
             </Typography>
@@ -336,7 +336,7 @@ const Resume = () => {
             <Typography
               variant="body1"
               align="center"
-              style={{ color: "tomato" }}
+              style={{ color: "#A3BCB6" }}
             >
               Kingwood Community College
             </Typography>
@@ -366,7 +366,7 @@ const Resume = () => {
             <Typography
               variant="body1"
               align="center"
-              style={{ color: "tomato" }}
+              style={{ color: "#A3BCB6" }}
             >
               Humble High School
             </Typography>
@@ -396,7 +396,7 @@ const Resume = () => {
             <Typography
               variant="body1"
               align="center"
-              style={{ color: "tomato" }}
+              style={{ color: "#A3BCB6" }}
             >
               Kroger
             </Typography>
