@@ -3,9 +3,17 @@
     width: 80%;
     max-width: 800px;
     margin: 4rem auto;
+    
 }
 
 .btn {
+    width: 80%;
+    max-width: 800px;
+    margin: 4rem auto;
+}
+
+.input {
+    box-sizing: border-box;
     width: 80%;
     max-width: 800px;
     margin: 4rem auto;
