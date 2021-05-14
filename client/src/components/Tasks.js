@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Portfolio = () => {
+const Tasks = () => {
   const classes = useStyles();
   return (
     <Box component="div" className={classes.mainContainer}>
@@ -229,4 +229,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Tasks;
