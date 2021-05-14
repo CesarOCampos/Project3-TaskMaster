@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import CardActionArea from "@material-ui/core/CardActionArea";
 import {
   // Avatar,
   Box,
@@ -19,6 +20,8 @@ import Navbar from "./Navbar";
 // import avatar from "../thankfulme.png";
 import LaunchIcon from "@material-ui/icons/Launch";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import TaskModal from "../components/TaskModal/TaskModal";
+import "../components/ProjectModal/style.css";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -40,10 +43,17 @@ const useStyles = makeStyles((theme) => ({
 
 const Tasks = () => {
   const classes = useStyles();
+  const [show, setShow] = useState(false);
+  
+  const closeModalHandler = () => setShow(false);
+
   return (
     <Box component="div" className={classes.mainContainer}>
       <Navbar />
-
+      <Button onClick={() => setShow(true)} className="btn-openModal">
+        Create New Task
+      </Button>
+      <TaskModal show={show} close={closeModalHandler} />
       <Grid container justify="center">
         {/* Project 1 */}
         <Grid item xs={12} sm={8} md={6}>
@@ -54,7 +64,6 @@ const Tasks = () => {
               height="140"
               // image={project1}
             />
-
             <CardContent>
               <Typography gutterBottom variant="h5">
                 Task 1

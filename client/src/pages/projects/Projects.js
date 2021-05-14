@@ -52,7 +52,7 @@ const Projects = () => {
       <Navbar />
       <Box component="header" className={classes.mainContainer}>
         <Typography variant="h4" align="center" className={classes.heading}>
-          <button onClick={() => setShow(true)} className="btn-openModal">Create New Project</button>
+          <Button onClick={() => setShow(true)} className="btn-openModal">Create New Project</Button>
     <Card className={classes.root} className="card">
       <CardActionArea>
         <CardContent>
@@ -62,7 +62,6 @@ const Projects = () => {
           <Typography variant="body2" color="textSecondary" component="p">
             Project description
           </Typography>
-          
         </CardContent>
       </CardActionArea>
       <CardActions>
