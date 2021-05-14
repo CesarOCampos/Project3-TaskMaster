@@ -23,7 +23,6 @@ function App() {
       <CssBaseline />
       <Route exact path="/" component={Home} />
       <ProtectedRoute path="/profile" component={Profile} />
-
       <ProtectedRoute path="/projects" component={Projects} />
       <ProtectedRoute path="/tasks" component={Tasks} />
       <ProtectedRoute path="/draw" component={Draw} />
