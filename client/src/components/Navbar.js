@@ -115,7 +115,9 @@ const Navbar = () => {
               {sideList("left")}
               <Footer />
             </MobilLeftMenuSlider>
+
             <AuthNav />
+
           </Toolbar>
         </AppBar>
       </Box>

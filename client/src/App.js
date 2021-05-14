@@ -5,10 +5,11 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import './App.css';
 import Home from "./components/";
 import Projects from "./pages/projects/Projects";
+import Profile from "./pages/profile/Profile";
 import Portfolio from "./components/Portfolio";
 import Contacts from "./components/Contacts";
 import Loading from "./components/loading";
-
+import ProtectedRoute from "./auth/protected-route";
 
 function App() {
   const { isLoading } = useAuth0();
@@ -21,9 +22,12 @@ function App() {
     <>
     <CssBaseline />
     <Route exact path="/" component={Home}/>
-    <Route path="/projects" component={Projects}/>
-    <Route path="/portfolio" component={Portfolio}/>
-    <Route path="/contacts" component={Contacts}/>
+
+    <ProtectedRoute path="/profile" component={Profile} />
+
+    <ProtectedRoute path="/projects" component={Projects}/>
+    <ProtectedRoute path="/portfolio" component={Portfolio}/>
+    <ProtectedRoute path="/contacts" component={Contacts}/>
       
     </>
   );
