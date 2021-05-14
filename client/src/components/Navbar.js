@@ -23,6 +23,8 @@ import AssignmentLateIcon from "@material-ui/icons/AssignmentLate";
 import { Home, Apps } from "@material-ui/icons";
 import AuthNav from "./auth-nav";
 // import avatar from "../avatarThinking.png";
+import logo from "../images/taskmaster-logo.png"
+import "./style/style.css"
 
 const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
@@ -108,12 +110,12 @@ const Navbar = () => {
       <Box component="nav">
         <AppBar position="static" style={{ background: "#222" }}>
           <Toolbar>
+          
             <IconButton onClick={toggleSlider("left", true)}>
               <MenuIcon style={{ color: "#A3BCB6" }} />
             </IconButton>
-            <Typography variant="h5" style={{ color: "tan" }}>
-              Task Master
-            </Typography>
+            <img className="pic" src={logo} alt="profile pic" />
+            
             <MobilLeftMenuSlider
               anchor="left"
               open={state.left}
