@@ -4,15 +4,15 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Box,} from "@material-ui/core";
+import { Typography, Box } from "@material-ui/core";
 import Navbar from "../../components/Navbar";
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
 
-import "./style.css"
+import "./style.css";
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -41,7 +41,6 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(15),
     height: theme.spacing(15),
   },
-  
 }));
 
 const Profile = () => {
@@ -51,58 +50,55 @@ const Profile = () => {
 
   return (
     <>
+      <Navbar />
 
-  <Navbar />
-  
-  <Box component="header" className={classes.mainContainer}>
+      <Box component="header" className={classes.mainContainer}>
         <Typography variant="h4" align="center" className={classes.heading}>
           User Profile
           <br />
           <br />
+          <Card className={classes.root} className="card">
+            <CardActionArea>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {name}
+                </Typography>
 
-              <Card className={classes.root} className="card">
-                 
-                  <CardActionArea>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  <img
+                    src={picture}
+                    alt="Profile"
+                    className="rounded-circle img-fluid profile-picture mb-3 mb-md-0"
+                  />
+                </Typography>
 
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        {name}
-                      </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  {email}
+                </Typography>
 
-                      <Typography variant="body2" color="textSecondary" component="p">
-                        <img
-                          src={picture}
-                          alt="Profile"
-                          className="rounded-circle img-fluid profile-picture mb-3 mb-md-0"
-                        />
-                      </Typography>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  component="pre"
+                >
+                  {JSON.stringify(user, null, 2)}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
 
-                      <Typography variant="body2" color="textSecondary" component="p">
-                        {email}
-                      </Typography>
-                      
-                      <Typography variant="body2" color="textSecondary" component="pre">
-                        {JSON.stringify(user, null, 2)}
-                      </Typography>
-                    </CardContent>
-
-                  </CardActionArea>
-
-                <CardActions>
-                  <Button className="btn" size="small" color="primary">
-                    Notes
-                  </Button>
-                  <Button className="btn" size="small" color="primary">
-                    Add a Task
-                  </Button>
-                </CardActions>
-              
-              </Card>
-
+            <CardActions>
+              <Button className="btn" size="small" color="primary">
+                Notes
+              </Button>
+              <Button className="btn" size="small" color="primary">
+                Add a Task
+              </Button>
+            </CardActions>
+          </Card>
         </Typography>
       </Box>
 
-    {/* <div>
+      {/* <div>
       <div className="row align-items-center profile-header">
         <div className="col-md-2 mb-3">
           <img
@@ -122,7 +118,6 @@ const Profile = () => {
         </pre>
       </div>
     </div> */}
-
     </>
   );
 };
