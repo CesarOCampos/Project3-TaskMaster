@@ -9,7 +9,7 @@ import Profile from "./pages/profile/Profile";
 import Portfolio from "./components/Portfolio";
 import Contacts from "./components/Contacts";
 import Loading from "./components/loading";
-
+import ProtectedRoute from "./auth/protected-route";
 
 function App() {
   const { isLoading } = useAuth0();
@@ -23,7 +23,7 @@ function App() {
     <CssBaseline />
     <Route exact path="/" component={Home}/>
 
-    <Route path="/profile" component={Profile} />
+    <ProtectedRoute path="/profile" component={Profile} />
 
     <Route path="/projects" component={Projects}/>
     <Route path="/portfolio" component={Portfolio}/>
