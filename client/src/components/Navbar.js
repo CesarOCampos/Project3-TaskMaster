@@ -103,10 +103,11 @@ const Navbar = () => {
       <Box component="nav">
         <AppBar position="static" style={{ background: "#222" }}>
           <Toolbar>
+          
             <IconButton onClick={toggleSlider("left", true)}>
               <MenuIcon style={{ color: "#A3BCB6" }} />
             </IconButton>
-              <img id="pic" className="pic" src={logo} alt="profile pic" />
+            <img className="pic" src={logo} alt="profile pic" />
             
             <MobilLeftMenuSlider
               anchor="left"
