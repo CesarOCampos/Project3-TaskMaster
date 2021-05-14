@@ -1,12 +1,17 @@
 import React from 'react';
 import "./style.css"
 
-const ProjectModal = () => {
+const ProjectModal = ({ show, close }) => {
     return(
-        <div className="modal-wrapper">
+        <div className="modal-wrapper"
+            style={{
+                transform: show ? 'translate(0vh)' : 'translate(-100vh)',
+                opacity: show ? '1' : '0'
+            }}
+        >
             <div className="modal-header">
                 <p>Create a New Project</p>
-                <span className="close-modal-btn">x</span>
+                <span onClick={close} className="close-modal-btn">x</span>
             </div>
             <div className="modal-content">
                 <div className="modal-body">

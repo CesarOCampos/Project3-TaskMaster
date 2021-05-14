@@ -6,22 +6,18 @@ import Home from "./components/";
 import Projects from "./pages/projects/Projects";
 import Portfolio from "./components/Portfolio";
 import Contacts from "./components/Contacts";
-import ProjectModal from "./components/ProjectModal/ProjectModal";
+
 
 
 
 function App() {
   return (
-    
     <>
-    <ProjectModal />
     <CssBaseline />
     <Route exact path="/" component={Home}/>
     <Route path="/projects" component={Projects}/>
     <Route path="/portfolio" component={Portfolio}/>
     <Route path="/contacts" component={Contacts}/>
-    
-      
     </>
   );
 }
