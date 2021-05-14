@@ -54,7 +54,7 @@ const InputField = withStyles({
   },
 })(TextField);
 
-const Contacts = () => {
+const Draw = () => {
   const classes = useStyles();
   return (
     <Box
@@ -86,4 +86,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default Draw;

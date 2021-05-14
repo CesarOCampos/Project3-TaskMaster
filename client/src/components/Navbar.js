@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import MobilLeftMenuSlider from "@material-ui/core/Drawer";
 import Footer from "./Footer";
 import MenuIcon from "@material-ui/icons/Menu";
+import GestureIcon from "@material-ui/icons/Gesture";
 import {
   Toolbar,
   Typography,
@@ -18,7 +19,7 @@ import {
   List,
 } from "@material-ui/core";
 import AssignmentLateIcon from "@material-ui/icons/AssignmentLate";
-import { Home, Apps, ContactMail } from "@material-ui/icons";
+import { Home, Apps } from "@material-ui/icons";
 import AuthNav from "./auth-nav";
 // import avatar from "../avatarThinking.png";
 
@@ -53,12 +54,12 @@ const menuItems = [
   {
     listIcon: <Apps />,
     listText: "Tasks",
-    listPath: "/portfolio",
+    listPath: "/tasks",
   },
   {
-    listIcon: <ContactMail />,
+    listIcon: <GestureIcon />,
     listText: "Drawing Board",
-    listPath: "/contacts",
+    listPath: "/draw",
   },
 ];
 
@@ -117,7 +118,6 @@ const Navbar = () => {
             </MobilLeftMenuSlider>
 
             <AuthNav />
-
           </Toolbar>
         </AppBar>
       </Box>
