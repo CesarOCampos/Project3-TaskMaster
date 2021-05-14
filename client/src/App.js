@@ -25,9 +25,9 @@ function App() {
 
     <ProtectedRoute path="/profile" component={Profile} />
 
-    <Route path="/projects" component={Projects}/>
-    <Route path="/portfolio" component={Portfolio}/>
-    <Route path="/contacts" component={Contacts}/>
+    <ProtectedRoute path="/projects" component={Projects}/>
+    <ProtectedRoute path="/portfolio" component={Portfolio}/>
+    <ProtectedRoute path="/contacts" component={Contacts}/>
       
     </>
   );
