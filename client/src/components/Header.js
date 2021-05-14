@@ -59,7 +59,6 @@ const Header = () => {
             Make sure you never miss a deadline!
           </Typography>
         </Grid>
-        <button onClick={() => setShow(true)} className="btn-openModal">Create New Project</button>
     
       </Box>
     </div>

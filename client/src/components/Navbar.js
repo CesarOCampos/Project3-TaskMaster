@@ -19,6 +19,7 @@ import {
 } from "@material-ui/core";
 import AssignmentLateIcon from "@material-ui/icons/AssignmentLate";
 import { Home, Apps, ContactMail } from "@material-ui/icons";
+import AuthNav from "./auth-nav";
 // import avatar from "../avatarThinking.png";
 
 const useStyles = makeStyles((theme) => ({
@@ -114,6 +115,9 @@ const Navbar = () => {
               {sideList("left")}
               <Footer />
             </MobilLeftMenuSlider>
+
+            <AuthNav />
+
           </Toolbar>
         </AppBar>
       </Box>
