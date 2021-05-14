@@ -1,13 +1,15 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Button } from "@material-ui/core";
+//import { Button } from "@material-ui/core";
+import "./style.css/style.css"
 
 const LogoutButton = () => {
   const { logout } = useAuth0();
   return (
-    <Button
+    <button
+    className="btn-logout"
     size="small"
-    color="primary"
+    
     onClick={() =>
       logout({
         returnTo: window.location.origin,
@@ -16,7 +18,7 @@ const LogoutButton = () => {
     variant="contained"
   >
     Log Out
-  </Button>
+    </button>
     // <button
     //   className="btn btn-danger btn-block"
       

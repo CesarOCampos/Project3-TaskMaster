@@ -13,7 +13,7 @@ import ProtectedRoute from "./auth/protected-route";
 
 function App() {
   const { isLoading } = useAuth0();
-
+  
   if (isLoading) {
     return <Loading />;
   }
@@ -22,13 +22,11 @@ function App() {
     <>
     <CssBaseline />
     <Route exact path="/" component={Home}/>
-
     <ProtectedRoute path="/profile" component={Profile} />
 
     <ProtectedRoute path="/projects" component={Projects}/>
     <ProtectedRoute path="/portfolio" component={Portfolio}/>
     <ProtectedRoute path="/contacts" component={Contacts}/>
-      
     </>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Box,} from "@material-ui/core";
 import Navbar from "../../components/Navbar";
@@ -8,6 +8,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import "./style.css"
+import ProjectModal from "../../components/ProjectModal/ProjectModal";
+import "../../components/ProjectModal/style.css"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mainContainer: {
     background: "#A3BCB6",
-    height: "100vh",
+    height: "150vh",
     opacity: ".95",
   },
   heading: {
@@ -42,14 +44,15 @@ const useStyles = makeStyles((theme) => ({
 
 const Projects = () => {
   const classes = useStyles();
+  const [show, setShow] = useState(false);
+
+  const closeModalHandler = () => setShow(false);
   return (
     <>
       <Navbar />
       <Box component="header" className={classes.mainContainer}>
         <Typography variant="h4" align="center" className={classes.heading}>
-          Projects
-          <br />
-          <br />
+          <button onClick={() => setShow(true)} className="btn-openModal">Create New Project</button>
     <Card className={classes.root} className="card">
       <CardActionArea>
         <CardContent>
@@ -71,6 +74,7 @@ const Projects = () => {
         </Button>
       </CardActions>
     </Card>
+    <ProjectModal show={show} close={closeModalHandler}/>
         </Typography>
       </Box>
     </>
