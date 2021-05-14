@@ -2,21 +2,21 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 // import { makeStyles } from "@material-ui/core/styles";
-import { Button } from "@material-ui/core";
+//import { Button } from "@material-ui/core";
+import "./style.css/style.css"
 
 const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
-
   return (
-    <Button
+    <button
+    className="btn-logout"
     size="small"
-    color="primary"
     onClick={() => loginWithRedirect()}
-    target="_blank"
+    
     variant="contained"
   >
     Log In
-  </Button>
+  </button>
     // <button
     //   className="btn btn-primary btn-block"
     //   onClick={() => loginWithRedirect()}

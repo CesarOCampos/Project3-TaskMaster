@@ -1,11 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .card {
     box-sizing: border-box;
     width: 80%;
     max-width: 800px;
     margin: 4rem auto;
+    height: 10rem;
+    
 }
 
 .btn {
+    width: 80%;
+    max-width: 800px;
+    margin: 4rem auto;
+}
+
+.input {
+    box-sizing: border-box;
     width: 80%;
     max-width: 800px;
     margin: 4rem auto;
