@@ -20,7 +20,8 @@ import Navbar from "./Navbar";
 // import avatar from "../thankfulme.png";
 import LaunchIcon from "@material-ui/icons/Launch";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import TaskModal from "../components/TaskModal/TaskModal"
+import TaskModal from "../components/TaskModal/TaskModal";
+import "../components/ProjectModal/style.css";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
