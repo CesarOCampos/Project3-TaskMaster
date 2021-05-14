@@ -22,7 +22,7 @@ const TaskModal = ({ show, close }) => {
             <input className="input-name"></input>
             <h4>Task description</h4>
             <input className="input-desc"></input>
-            <h4>Team Members</h4>
+            <h4>Team Members (if any) </h4>
             <input className="input-team"></input>
             </div>
             <div className="modal-footer">
