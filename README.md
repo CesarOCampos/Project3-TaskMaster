@@ -19,22 +19,23 @@
 
 ## User Story
 
-* 
+* As a user I want to be able to keep track of my current and past projects and tasks. I want to be able to colaborate with my group with a shared whiteboard to have collective creation sessions with my team.
 
 ## Installation Instructions
 
-    * N/A
+    N/A
 
 ## Test Instructions
 
-    * N/A
+    N/A
 
 ## Usage Information
-    * N/A
+
+    N/A
 
 ## Contributor Guidlines
 
-    * Contributions are always welcome! (Please fork and pull request only.)
+    Contributions are always welcome! (Please fork and pull request only.)
 
 ## Mock-Up
 
@@ -47,5 +48,5 @@
 ## License 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
-    
+
 ## Questions
