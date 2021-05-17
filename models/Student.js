@@ -6,7 +6,7 @@ class Student extends Model {}
 Student.init(
   {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL(24,0),
       allowNull: false,
       primaryKey: true,
       autoIncrement: false,
