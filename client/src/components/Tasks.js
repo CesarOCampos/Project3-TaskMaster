@@ -20,7 +20,7 @@ import Navbar from "./Navbar";
 // import avatar from "../thankfulme.png";
 import LaunchIcon from "@material-ui/icons/Launch";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import TaskModal from "../components/TaskModal/TaskModal";
+import TaskModal from "./TaskModal/TaskModal";
 import "../components/ProjectModal/style.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -50,9 +50,9 @@ const Tasks = () => {
   return (
     <Box component="div" className={classes.mainContainer}>
       <Navbar />
-      <Button onClick={() => setShow(true)} className="btn-openModal">
+      <button onClick={() => setShow(true)} className="btn-openModal">
         Create New Task
-      </Button>
+      </button>
       <TaskModal show={show} close={closeModalHandler} />
       <Grid container justify="center">
         {/* Project 1 */}

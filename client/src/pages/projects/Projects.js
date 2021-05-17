@@ -52,7 +52,7 @@ const Projects = () => {
       <Navbar />
       <Box component="header" className={classes.mainContainer}>
         <Typography variant="h4" align="center" className={classes.heading}>
-          <Button onClick={() => setShow(true)} className="btn-openModal">Create New Project</Button>
+          <button onClick={() => setShow(true)} className="btn-openModal">Create New Project</button>
     <Card className={classes.root} className="card">
       <CardActionArea>
         <CardContent>
