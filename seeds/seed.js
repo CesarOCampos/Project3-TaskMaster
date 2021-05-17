@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
 const { Student, Project, Task } = require('../models');
 
-const taskmasterData = require('./TaskMaster.json');
+const taskData = require('./TaskData.json');
 const studentData = require('./StudentData.json');
 const projectData = require('./ProjectData.json');
 
