@@ -50,9 +50,9 @@ const Tasks = () => {
   return (
     <Box component="div" className={classes.mainContainer}>
       <Navbar />
-      <Button onClick={() => setShow(true)} className="btn-openModal">
+      <button onClick={() => setShow(true)} className="btn-openModal">
         Create New Task
-      </Button>
+      </button>
       <TaskModal show={show} close={closeModalHandler} />
       <Grid container justify="center">
         {/* Project 1 */}
