@@ -18,7 +18,7 @@
         "id": 4,
         "taskname": "Create seed data and seed the database",
         "status": "UNASSIGNED"
-    }
+    },
     {
         "id": 5,
         "taskname": "Create Professional README document",
