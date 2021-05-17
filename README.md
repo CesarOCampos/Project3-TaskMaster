@@ -1,4 +1,5 @@
 # Project3-TaskMaster
+We are creating a Task Management Application in which students can use to keep track of projects and the tasks they need to do to achieve success and completion in their projects.
 
 #### Table of contents
 
@@ -14,6 +15,7 @@
 10. [Questions](#questions)
 
 ## Project Task
+
 
 
 
@@ -50,3 +52,14 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
 
 ## Questions
+Email Cesar at cesarorlandocampos@gmail.com
+Find me on GitHub [CesarOCampos](http://github.com/CesarOCampos)
+
+Email Susan at susan.fujii@me.com
+Find me on GitHub [Srfujii](https://github.com/srfujii/)
+
+Email Matt at matt.r.miller09@gmail.com
+Find me on GitHub [Millmr](https://github.com/Millmr)
+
+Email George at georgehuliaris@mac.com
+Find me on GitHub [georgehuliaris](https://github.com/georgehuliaris)
