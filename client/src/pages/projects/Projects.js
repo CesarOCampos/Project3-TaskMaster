@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Box,} from "@material-ui/core";
+import { Typography, Box } from "@material-ui/core";
 import Navbar from "../../components/Navbar";
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import "./style.css"
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
+import "./style.css";
 import ProjectModal from "../../components/ProjectModal/ProjectModal";
-import "../../components/ProjectModal/style.css"
+import "../../components/ProjectModal/style.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(15),
     height: theme.spacing(15),
   },
-  
 }));
 
 const Projects = () => {
@@ -52,28 +51,30 @@ const Projects = () => {
       <Navbar />
       <Box component="header" className={classes.mainContainer}>
         <Typography variant="h4" align="center" className={classes.heading}>
-          <Button onClick={() => setShow(true)} className="btn-openModal">Create New Project</Button>
-    <Card className={classes.root} className="card">
-      <CardActionArea>
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Project 1
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Project description
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button className="btn" size="small" color="primary">
-          Notes
-        </Button>
-        <Button className="btn" size="small" color="primary">
-          Add a Task
-        </Button>
-      </CardActions>
-    </Card>
-    <ProjectModal show={show} close={closeModalHandler}/>
+          <button onClick={() => setShow(true)} className="btn-openModal">
+            Create New Project
+          </button>
+          <Card className={classes.root} className="card">
+            <CardActionArea>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  Project 1
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Project description
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button className="btn" size="small" color="primary">
+                Notes
+              </Button>
+              <Button className="btn" size="small" color="primary">
+                Add a Task
+              </Button>
+            </CardActions>
+          </Card>
+          <ProjectModal show={show} close={closeModalHandler} />
         </Typography>
       </Box>
     </>
