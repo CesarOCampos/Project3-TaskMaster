@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const TaskRoutes = require('./TaskRoutes');
-const libraryCardRoutes = require('./libraryCardRoutes');
+const projectRoutes = require('./projectRoutes');
+const taskRoutes = require('./taskRoutes');
 
-router.use('/Tasks', TaskRoutes);
-router.use('/cards', libraryCardRoutes);
+router.use('/tasks', taskRoutes);
+router.use('/projects', projectRoutes);
 
 module.exports = router;
