@@ -6,8 +6,7 @@ const ProjectModal = ({ show, close }) => {
 
     const [projectName, setProjectName] = useState();
     const [projectDesc, setProjectDesc] = useState();
-    ;
-
+    
     const handleFormSubmit = async (event) => {
         event.preventDefault();
             if (projectName && projectDesc) {
@@ -25,8 +24,6 @@ const ProjectModal = ({ show, close }) => {
                     }
             };
     }
-    
-
     
     return(
         <div className="modal-wrapper"
@@ -67,4 +64,3 @@ const ProjectModal = ({ show, close }) => {
 }; 
 
 export default ProjectModal;
-

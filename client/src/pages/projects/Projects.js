@@ -68,7 +68,7 @@ const Projects = () => {
         <Button className="btn" size="small" color="primary">
           Notes
         </Button>
-        <Button className="btn" size="small" color="primary">
+        <Button className="btn" size="small" color="primary" onclick="/task">
           Add a Task
         </Button>
       </CardActions>
