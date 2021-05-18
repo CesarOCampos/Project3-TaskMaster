@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./style.css"
 //import { Input } from "../Form";
 
@@ -6,7 +6,7 @@ const ProjectModal = ({ show, close }) => {
 
     const [projectName, setProjectName] = useState();
     const [projectDesc, setProjectDesc] = useState();
-    ;
+
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -15,11 +15,12 @@ const ProjectModal = ({ show, close }) => {
                     method: 'POST',
                     body: JSON.stringify({ projectname:projectName, projectdesc:projectDesc }),
                     headers: { 'Content-Type': 'application/json' },
-                
                     });
                 
                     if (response.ok) {
                     console.log("ya");
+                    window.location.reload(false);
+                    
                     } else {
                     alert(response.statusText);
                     }
@@ -27,6 +28,7 @@ const ProjectModal = ({ show, close }) => {
     }
     
 
+        
     
     return(
         <div className="modal-wrapper"
@@ -59,6 +61,7 @@ const ProjectModal = ({ show, close }) => {
                     className="btn-submit"
                     disabled={!(projectName && projectDesc)}
                     onClick={handleFormSubmit}
+                    
                     >Submit</button>
                 </div>
             </div>
