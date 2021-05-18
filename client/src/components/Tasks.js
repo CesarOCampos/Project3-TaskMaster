@@ -20,6 +20,8 @@ import Navbar from "./Navbar";
 // import avatar from "../thankfulme.png";
 import LaunchIcon from "@material-ui/icons/Launch";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import SaveIcon from "@material-ui/icons/Save";
+import DeleteIcon from "@material-ui/icons/Delete";
 import TaskModal from "./TaskModal/TaskModal";
 import "../components/ProjectModal/style.css";
 
@@ -82,7 +84,7 @@ const Tasks = () => {
                 variant="contained"
                 startIcon={<GitHubIcon />}
               >
-                GitHub
+                Project
               </Button>
 
               <Button
@@ -91,9 +93,20 @@ const Tasks = () => {
                 href=""
                 target="_blank"
                 variant="contained"
-                startIcon={<LaunchIcon />}
+                startIcon={<SaveIcon />}
               >
-                Visit Page
+                Save
+              </Button>
+
+              <Button
+                size="small"
+                color="#A3BCB6"
+                href=""
+                target="_blank"
+                variant="contained"
+                startIcon={<DeleteIcon />}
+              >
+                Delete
               </Button>
             </CardActions>
           </Card>

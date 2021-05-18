@@ -3,7 +3,7 @@ We are creating a Task Management Application in which students can use to keep 
 
 #### Table of contents
 
-1. [Project Task](#project-task)
+1. [Project Description](#project-description)
 2. [User Story](#user-story)
 3. [Installation Instructions](#installation-instruction)
 4. [Test Instructions](#test-instruction)
@@ -14,9 +14,9 @@ We are creating a Task Management Application in which students can use to keep 
 9. [License](#license)
 10. [Questions](#questions)
 
-## Project Task
+## Project Description
 
-
+This task management application will allow students to create, add, delete projects, be assigned to a project, and create and delete tasks
 
 
 ## User Story
@@ -25,15 +25,15 @@ We are creating a Task Management Application in which students can use to keep 
 
 ## Installation Instructions
 
-    N/A
+    npm install
 
 ## Test Instructions
 
-    N/A
+    npm run start
 
 ## Usage Information
 
-    N/A
+    
 
 ## Contributor Guidlines
 
