@@ -1,6 +1,6 @@
 // We use an ID Token to get the profile information of a logged-in user.
 // This route should be protected
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -48,6 +48,47 @@ const Profile = () => {
   const { name, picture, email } = user;
   const classes = useStyles();
 
+
+  const [projects, setProjects] = useState([]);
+  useEffect(
+    () => {
+      async function getData() {
+        try {
+        const response = await fetch('/api/projects', {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+          });
+          const data = await response.json();
+          console.log("ya");
+          //console.log(data)
+          setProjects(data)
+        }catch (err) {
+          console.log(err)
+        }
+      }
+      getData();
+    },[]
+  )
+
+  const findStudentProject = async (id) => {
+    if (id) {
+      const response = await fetch('/api/projects/:id', {
+        method: 'GET',
+        body: JSON.stringify({ projectname: projectName, projectdesc: projectDesc }),
+        headers: { 'Content-Type': 'application/json' },
+
+      });
+
+      if (response.ok) {
+        console.log("Yippee!");
+      } else {
+        alert(response.statusText);
+      }
+    };
+  }
+
+
+
   return (
     <>
       <Navbar />
@@ -66,7 +107,7 @@ const Profile = () => {
                 <Typography gutterBottom variant="h5" component="h2">
                   {name}
                   {email}
-                  
+
                 </Typography>
 
                 <Typography variant="body2" color="textSecondary" component="p">
