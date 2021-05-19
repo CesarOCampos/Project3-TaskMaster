@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Box,} from "@material-ui/core";
 import Navbar from "../../components/Navbar";
@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 import "./style.css"
 import ProjectModal from "../../components/ProjectModal/ProjectModal";
 import "../../components/ProjectModal/style.css"
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,7 +43,34 @@ const useStyles = makeStyles((theme) => ({
   
 }));
 
+
+
 const Projects = () => {
+
+  const [projects, setProjects] = useState([]);
+
+
+  useEffect(
+    () => {
+      async function getData() {
+        try {
+        const response = await fetch('/api/projects', {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+          });
+          const data = await response.json();
+          console.log("ya");
+          //console.log(data)
+          setProjects(data)
+        }catch (err) {
+          console.log(err)
+        }
+      }
+      
+      getData();
+        
+    },[]
+  )
   const classes = useStyles();
   const [show, setShow] = useState(false);
 
@@ -53,14 +81,16 @@ const Projects = () => {
       <Box component="header" className={classes.mainContainer}>
         <Typography variant="h4" align="center" className={classes.heading}>
           <button onClick={() => setShow(true)} className="btn-openModal">Create New Project</button>
+          <ProjectModal show={show} close={closeModalHandler}/>
+          {projects.map(item => (
     <Card className={classes.root} className="card">
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Project 1
+            {item.projectname}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Project description
+            {item.projectdesc}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -73,7 +103,7 @@ const Projects = () => {
         </Button>
       </CardActions>
     </Card>
-    <ProjectModal show={show} close={closeModalHandler}/>
+          ))}
         </Typography>
       </Box>
     </>
