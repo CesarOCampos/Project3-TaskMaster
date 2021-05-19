@@ -1,6 +1,6 @@
 // We use an ID Token to get the profile information of a logged-in user.
 // This route should be protected
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -11,8 +11,9 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
-
 import "./style.css";
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -42,10 +43,33 @@ const Profile = () => {
   const { name, picture, email } = user;
   const classes = useStyles();
 
+  const [projects, setProjects] = useState([]);
+
+  useEffect(
+    () => {
+      async function getData() {
+        try {
+        const response = await fetch('/api/projects', {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+          });
+          const data = await response.json();
+          console.log("profile");
+          console.log(data)
+          setProjects(data)
+        }catch (err) {
+          console.log(err)
+        }
+      }
+      
+      getData();
+        
+    },[]
+  )
+
   return (
     <>
       <Navbar />
-
       <Box component="header" className={classes.mainContainer}>
 
         <Typography variant="h4" align="center" className={classes.heading}>
@@ -73,7 +97,7 @@ const Profile = () => {
                 </Typography>
 
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Email Address: {user.email}
+                  Email Address: {email}
                 </Typography>
 
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -91,6 +115,31 @@ const Profile = () => {
             </CardActionArea>
 
           </Card>
+
+          {projects.map(item => (
+    <Card className={classes.root} className="card">
+      <CardActionArea>
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {item.projectname}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {item.projectdesc}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button className="btn" size="small" color="primary">
+          Notes
+        </Button>
+        <Button className="btn" size="small" color="primary">
+          Add a Task
+        </Button>
+      </CardActions>
+    </Card>
+          ))}
+
+          
         </Typography>
       </Box>
 
