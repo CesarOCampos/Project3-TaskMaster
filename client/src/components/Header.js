@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Avatar, Grid, Box } from "@material-ui/core";
-// import avatar from "";
+import { Typography, Grid, Box } from "@material-ui/core";
 import Typed from "react-typed";
-import ProjectModal from "./ProjectModal/ProjectModal";
 import "./ProjectModal/style.css"
 
 

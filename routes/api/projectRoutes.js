@@ -27,5 +27,24 @@ router.get('/', async (req, res) => {
   }
 });
 
+// /api/projects/:id  GET: GET PROJECT FOR SPECIFIC STUDENT BASED ON STUDENT ID
+router.get('/:id', async (req, res) => {
+  try {
+      console.log("\n\nHELLO I HIT THE ROUTE");
+      console.log("Req.params.id: ", req.params.id);
+
+      const projectData = await Project.findAll({
+        // include: [{ model:Task }],
+        // include: [{ model: Task, through: Project, as: 'project_tasks' }], 
+        where: { student_id: req.params.id }
+      });
+    // const user = userData.get({ plain: true });
+    res.json(projectData);
+    console.log("ProjectData: ", projectData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 module.exports = router;

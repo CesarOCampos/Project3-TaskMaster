@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import "./App.css";

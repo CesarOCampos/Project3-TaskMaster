@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mainContainer: {
     background: "#A3BCB6",
-    height: "100vh",
+    height: "300vh",
     opacity: ".95",
   },
   heading: {
@@ -43,27 +43,47 @@ const Profile = () => {
   const { name, picture, email } = user;
   const classes = useStyles();
 
+  let student_id = user.sub.split("|");
+  student_id = student_id[1];
+
   const [projects, setProjects] = useState([]);
+  const [tasks, setTasks] = useState([]);
+
+  async function getProjects() {
+    try {
+      const response = await fetch('/api/projects/' + student_id, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await response.json();
+
+      console.log("Data: ", data);
+      setProjects(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async function getTasks() {
+    try {
+      console.log("In getTasks");
+      const response = await fetch('/api/tasks/' + student_id, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await response.json();
+
+      console.log("Task Data: ", data);
+      setTasks(data);
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   useEffect(
     () => {
-      async function getData() {
-        try {
-        const response = await fetch('/api/projects', {
-          method: 'GET',
-          headers: { 'Content-Type': 'application/json' },
-          });
-          const data = await response.json();
-          console.log("profile");
-          console.log(data)
-          setProjects(data)
-        }catch (err) {
-          console.log(err)
-        }
-      }
-      
-      getData();
-        
+      getProjects();
+      // getTasks();
     },[]
   )
 
@@ -71,17 +91,12 @@ const Profile = () => {
     <>
       <Navbar />
       <Box component="header" className={classes.mainContainer}>
-
         <Typography variant="h4" align="center" className={classes.heading}>
-          Student Profile
-          <br />
-          <br />
           <Card className={classes.root} className="card">
-
             <CardActionArea>
               <CardContent>
 
-              <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="body2" color="textSecondary" component="p">
                   <img
                     src={picture}
                     alt="Profile"
@@ -101,48 +116,39 @@ const Profile = () => {
                 </Typography>
 
                 <Typography variant="body2" color="textSecondary" component="p">
-                  UniqueID ("sub"): {user.sub}
+                  UniqueID : {student_id}
                 </Typography>
-
-                {/* <Typography
-                  variant="body2"
-                  color="textSecondary"
-                  component="pre"
-                >
-                  {JSON.stringify(user, null, 2)}
-                </Typography> */}
+                  {/* {JSON.stringify(user, null, 2)} */}
+                
               </CardContent>
             </CardActionArea>
-
           </Card>
 
           {projects.map(item => (
-    <Card className={classes.root} className="card">
-      <CardActionArea>
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {item.projectname}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {item.projectdesc}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button className="btn" size="small" color="primary">
-          Notes
-        </Button>
-        <Button className="btn" size="small" color="primary">
-          Add a Task
-        </Button>
-      </CardActions>
-    </Card>
+            <Card className={classes.root} className="card">
+              <CardActionArea>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Current Project: {item.projectname}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    {item.projectdesc}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button className="btn" size="small" color="primary">
+                  Notes
+                </Button>
+                <Button className="btn" size="small" color="primary">
+                  Add a Task
+                </Button>
+              </CardActions>
+            </Card>
           ))}
 
-          
         </Typography>
       </Box>
-
     </>
   );
 };
