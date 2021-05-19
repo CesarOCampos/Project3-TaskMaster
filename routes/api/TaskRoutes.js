@@ -1,13 +1,10 @@
 const router = require('express').Router();
-// Include the Book model with the other imports
-// const { Reader, Book, LibraryCard } = require('../../models');
 const { Student, Project, Task } = require("../../models");
 
-// GET all readers
-
+// GET all tasks
 router.get('/', async (req, res) => {
   try {
-    const taskData = await Task.create(req.body);
+    const taskData = await Task.findAll({});
     res.status(200).json(taskData);
   } catch (err) {
     res.status(500).json(err);
@@ -26,7 +23,7 @@ router.get('/', async (req, res) => {
 //   }
 // });
 
-// // GET a single reader
+// // GET a single task
 // router.get('/:id', async (req, res) => {
 //   try {
 //     const Task = await Student.findByPk(req.params.id, {

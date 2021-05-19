@@ -31,24 +31,23 @@ const TaskModal = ({ show, close }) => {
             <div className="modal-content">
                 <div className="modal-body">
                     <h4>Task Name</h4>
-                    <input
-                        className="input-name"
-                        onchange={event => setTaskName(event.target.value)}
-                        name="taskname"
-                        placeholder="Task Name"
+                    <input 
+                    className="input-name" 
+                    onchange={event => setTaskName(event.target.value)} 
+                    name="taskname" 
+                    placeholder="Task Name"
                     ></input>
                     <h4>Task description</h4>
-                    <input
-                        className="input-desc"
-                        onchange={event => setTaskDesc(event.target.value)}
-                        name="taskdesc"
-                        placeholder="Task Description"
+                    <input 
+                    className="input-desc" 
+                    onchange={event => setTaskDesc(event.target.value)} 
+                    name="taskdesc" 
+                    placeholder="Task Description"
                     ></input>
-                    {/* <h4>Team Members (if any) </h4>
-                    <input className="input-team"></input> */}
                 </div>
                 <div className="modal-footer">
-                    <button className="btn-submit"
+                    <button
+                        className="btn-submit"
                         disabled={!(taskName && taskDesc)}
                         onclick={handleFormSubmit}>Submit</button>
                 </div>
