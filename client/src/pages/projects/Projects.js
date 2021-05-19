@@ -7,9 +7,9 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import "./style.css"
+import "./style.css";
 import ProjectModal from "../../components/ProjectModal/ProjectModal";
-import "../../components/ProjectModal/style.css"
+import "../../components/ProjectModal/style.css";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -98,7 +98,7 @@ const Projects = () => {
         <Button className="btn" size="small" color="primary">
           Notes
         </Button>
-        <Button className="btn" size="small" color="primary" onclick="/task">
+        <Button className="btn" size="small" color="primary" onclick="">
           Add a Task
         </Button>
       </CardActions>

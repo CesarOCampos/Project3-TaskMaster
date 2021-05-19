@@ -1,29 +1,15 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import {
-  // Avatar,
-  Box,
-  Grid,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Button,
-  Typography,
-} from "@material-ui/core";
+import {Box, Grid, Card, CardActions, CardContent, CardMedia, Button, Typography,} from "@material-ui/core";
 import Navbar from "./Navbar";
-// import project1 from "../images/portfolio.png";
-// import project2 from "../images/password_gen.png";
-// import project3 from "../images/cryptostock.png";
-// import project4 from "../images/ExpressNext.png";
-// import avatar from "../thankfulme.png";
 import LaunchIcon from "@material-ui/icons/Launch";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import SaveIcon from "@material-ui/icons/Save";
 import DeleteIcon from "@material-ui/icons/Delete";
 import TaskModal from "./TaskModal/TaskModal";
 import "../components/ProjectModal/style.css";
+
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -44,210 +30,66 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Tasks = () => {
+  const[tasks,setTasks] = useState([])
+  
+  useEffect(() => {
+    async function obtainData() {
+      try {
+        const reply = await fetch('/api/tasks', {
+          method: 'GET',
+          headers:{ 'Content-Type': 'application/json' },});
+        const info = await reply.json();
+        console.log(info);
+        setTasks(info);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    obtainData();
+  },[])
+
   const classes = useStyles();
   const [show, setShow] = useState(false);
-  
   const closeModalHandler = () => setShow(false);
 
   return (
-    <Box component="div" className={classes.mainContainer}>
-      <Navbar />
-      <button onClick={() => setShow(true)} className="btn-openModal">
-        Create New Task
-      </button>
-      <TaskModal show={show} close={closeModalHandler} />
-      <Grid container justify="center">
-        {/* Project 1 */}
-        <Grid item xs={12} sm={8} md={6}>
-          <Card className={classes.cardContainer}>
-            <CardMedia
-              component="img"
-              alt="Task 1"
-              height="140"
-              // image={project1}
-            />
-            <CardContent>
+  <Box component="div" className={classes.mainContainer}>
+    <Navbar />
+    <button onClick={() => setShow(true)} className="btn-openModal">
+      Create New Task
+    </button>
+    <TaskModal show={show} close={closeModalHandler} />
+    <Grid container justify="center">
+      <Grid item xs={12} sm={8} md={6}>
+        <Card className={classes.cardContainer}>
+          <CardMedia component="img" alt="Task 1" height="140"/>
+          <CardContent>
               <Typography gutterBottom variant="h5">
-                Task 1
-              </Typography>
+                name
+            </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                Notes
-              </Typography>
-            </CardContent>
+                description
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button href="" target="_blank" size="small" color="#A3BCB6" variant="contained" startIcon={<GitHubIcon />}
+            >
+              Project
+            </Button>
 
-            <CardActions>
-              <Button
-                href=""
-                target="_blank"
-                size="small"
-                color="#A3BCB6"
-                variant="contained"
-                startIcon={<GitHubIcon />}
-              >
-                Project
-              </Button>
+            <Button size="small" color="#A3BCB6" href="" target="_blank" variant="contained" startIcon={<SaveIcon />}
+            >
+              Save
+            </Button>
 
-              <Button
-                size="small"
-                color="#A3BCB6"
-                href=""
-                target="_blank"
-                variant="contained"
-                startIcon={<SaveIcon />}
-              >
-                Save
-              </Button>
-
-              <Button
-                size="small"
-                color="#A3BCB6"
-                href=""
-                target="_blank"
-                variant="contained"
-                startIcon={<DeleteIcon />}
-              >
-                Delete
-              </Button>
-            </CardActions>
-          </Card>
-        </Grid>
-        {/* Project 2 */}
-        <Grid item xs={12} sm={8} md={6}>
-          <Card className={classes.cardContainer}>
-            <CardMedia
-              component="img"
-              alt="Task 2"
-              height="140"
-              // image={project2}
-            />
-
-            <CardContent>
-              <Typography gutterBottom variant="h5">
-                Task 2
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Notes
-              </Typography>
-            </CardContent>
-
-            <CardActions>
-              <Button
-                href=""
-                target="_blank"
-                size="small"
-                color="#A3BCB6"
-                variant="contained"
-                startIcon={<GitHubIcon />}
-              >
-                GitHub
-              </Button>
-
-              <Button
-                size="small"
-                color="#A3BCB6"
-                href=""
-                target="_blank"
-                variant="contained"
-                startIcon={<LaunchIcon />}
-              >
-                Visit Page
-              </Button>
-            </CardActions>
-          </Card>
-        </Grid>
-
-        {/* Project 3 */}
-        <Grid item xs={12} sm={8} md={6}>
-          <Card className={classes.cardContainer}>
-            <CardMedia
-              component="img"
-              alt="Task 3"
-              height="140"
-              // image={project3}
-            />
-
-            <CardContent>
-              <Typography gutterBottom variant="h5">
-                Task 3
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Notes
-              </Typography>
-            </CardContent>
-
-            <CardActions>
-              <Button
-                href=""
-                size="small"
-                color="#A3BCB6"
-                target="_blank"
-                variant="contained"
-                startIcon={<GitHubIcon />}
-              >
-                GitHub
-              </Button>
-
-              <Button
-                size="small"
-                color="#A3BCB6"
-                href=""
-                target="_blank"
-                variant="contained"
-                startIcon={<LaunchIcon />}
-              >
-                Visit Page
-              </Button>
-            </CardActions>
-          </Card>
-        </Grid>
-
-        {/* Project 4 */}
-        <Grid item xs={12} sm={8} md={6}>
-          <Card className={classes.cardContainer}>
-            <CardMedia
-              component="img"
-              alt="Task 4"
-              height="140"
-              // image={project4}
-            />
-
-            <CardContent>
-              <Typography gutterBottom variant="h5">
-                Task 4
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Notes
-              </Typography>
-            </CardContent>
-
-            <CardActions>
-              <Button
-                href=""
-                target="_blank"
-                size="small"
-                color="#A3BCB6"
-                variant="contained"
-                startIcon={<GitHubIcon />}
-              >
-                GitHub
-              </Button>
-
-              <Button
-                size="small"
-                color="#A3BCB6"
-                href=""
-                target="_blank"
-                variant="contained"
-                startIcon={<LaunchIcon />}
-              >
-                Visit Page
-              </Button>
-            </CardActions>
-          </Card>
-        </Grid>
+            <Button size="small" color="#A3BCB6" href="" target="_blank" variant="contained" startIcon={<DeleteIcon />}>
+              Delete
+            </Button>
+          </CardActions>
+        </Card>
       </Grid>
-      {/* <Avatar className={classes.avatar} src={avatar} alt="George Huliaris" /> */}
-    </Box>
+    </Grid>
+  </Box>
   );
 };
 

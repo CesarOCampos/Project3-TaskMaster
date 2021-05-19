@@ -9,7 +9,7 @@ const TaskModal = ({ show, close }) => {
         event.preventDefault();
             if (taskName && taskDesc) {
                 const response = await fetch("/api/tasks", {
-                    method: 'post',
+                    method: 'POST',
                     body: JSON.stringify({ taskname: taskName, taskdesc: taskDesc }),
                     headers: { 'Content-Type': 'application/json' },
                 });
