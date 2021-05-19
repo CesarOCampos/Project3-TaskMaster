@@ -18,12 +18,12 @@ We are creating a Task Management Application in which students can use to keep 
 
 Do you feel like you and your team are never on the same page? 
 Did someone do your task because of a miscommunication and now you have two different versions of the same component? 
-Maybe you cant articulate the picture you have in your head but can draw it for your colleagues to understand.
+Maybe you can't articulate the picture you have in your head but can draw it for your colleagues to understand.
 TaskMaster can help with organizing your group’s tasks, 
 keeping track of projects, and in the future
 collaborate ideas through our drawing board, 
 and keep everyone on the right track
-Don’t ever miss a deadline, with TaskMaster
+Don’t ever miss a deadline, with TaskMaster!
 
 
 ## User Story
@@ -40,7 +40,7 @@ Don’t ever miss a deadline, with TaskMaster
 
 ## Usage Information
 
-    
+    N/A
 
 ## Contributor Guidlines
 
