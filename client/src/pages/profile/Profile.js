@@ -35,12 +35,6 @@ const useStyles = makeStyles((theme) => ({
     padding: "0",
     textTransform: "uppercase",
   },
-  avatar: {
-    display: "block",
-    margin: "0.5rem auto",
-    width: theme.spacing(15),
-    height: theme.spacing(15),
-  },
 }));
 
 const Profile = () => {
@@ -55,7 +49,7 @@ const Profile = () => {
       <Box component="header" className={classes.mainContainer}>
 
         <Typography variant="h4" align="center" className={classes.heading}>
-          User Profile
+          Student Profile
           <br />
           <br />
           <Card className={classes.root} className="card">
@@ -63,30 +57,36 @@ const Profile = () => {
             <CardActionArea>
               <CardContent>
 
-                <Typography gutterBottom variant="h5" component="h2">
-                  {name}
-                  {email}
-                  
-                </Typography>
-
-                <Typography variant="body2" color="textSecondary" component="p">
+              <Typography variant="body2" color="textSecondary" component="p">
                   <img
                     src={picture}
                     alt="Profile"
                   />
                 </Typography>
 
-                <Typography variant="body2" color="textSecondary" component="p">
-                  {user.email}
+                <Typography gutterBottom variant="h5" component="h2">
+                  {name}
                 </Typography>
 
-                <Typography
+                <Typography variant="body2" color="textSecondary" component="p">
+                  UserName: {user.nickname}
+                </Typography>
+
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Email Address: {user.email}
+                </Typography>
+
+                <Typography variant="body2" color="textSecondary" component="p">
+                  UniqueID ("sub"): {user.sub}
+                </Typography>
+
+                {/* <Typography
                   variant="body2"
                   color="textSecondary"
                   component="pre"
                 >
                   {JSON.stringify(user, null, 2)}
-                </Typography>
+                </Typography> */}
               </CardContent>
             </CardActionArea>
 
