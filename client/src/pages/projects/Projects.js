@@ -14,7 +14,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import TaskModal from "../../components/TaskModal/TaskModal";
 import "../../components/TaskModal/style.css"
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,

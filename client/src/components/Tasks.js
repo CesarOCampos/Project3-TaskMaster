@@ -5,11 +5,10 @@ import {Box, Grid, Card, CardActions, CardContent, Button, Typography,} from "@m
 import Navbar from "./Navbar";
 //import LaunchIcon from "@material-ui/icons/Launch";
 //import GitHubIcon from "@material-ui/icons/GitHub";
-import SaveIcon from "@material-ui/icons/Save";
+//import SaveIcon from "@material-ui/icons/Save";
 import DeleteIcon from "@material-ui/icons/Delete";
 import TaskModal from "./TaskModal/TaskModal";
 import "../components/TaskModal/style.css";
-//import { DataGrid } from "@material-ui/data-grid";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -52,16 +51,12 @@ const Tasks = () => {
   //   event.preventDefault();
   //   const id = tasks.id.value.trim();
   //   console.log(tasks.id.value);
-  //   if (id) {
-  //     //try {
+  //   if (tasks.id) {
   //       const response = await fetch(`/api/task/${id}`, {
   //         method: "DELETE",
   //         body: JSON.stringify({ id: id }),
   //         headers: { "Content-Type": "application/json", },
   //       });
-  //     // } catch (err) {
-  //     //   console.log(err);
-  //     // }
   //     (response.ok) ? document.location.replace('/api/tasks') : alert("Unable to delete task!");
   //   }
   // }
@@ -70,9 +65,6 @@ const Tasks = () => {
     <>
       <Navbar />
       <Box component="div" className={classes.mainContainer}>
-        <button onClick={() => setShow(true)} className="btn-openModal">
-          Create New Task
-        </button>
         {show && <TaskModal show={show} close={closeModalHandler} />}
         {tasks.map((item) => (
           <Grid container justify="center">
@@ -111,8 +103,9 @@ const Tasks = () => {
                   className={classes.button}
                   color="secondary"
                   variant="contained"
-                  startIcon={<DeleteIcon />}>
-                  Delete
+                  startIcon={<DeleteIcon />}
+                // onClick={delButtonHandler}
+                >Delete
                 </Button>
               </CardActions>
             </Card>
