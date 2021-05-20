@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Box } from "@material-ui/core";
 import Navbar from "../../components/Navbar";
@@ -42,6 +42,26 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        const response = await fetch("/api/projects", {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        });
+        const data = await response.json();
+        console.log("ya");
+        //console.log(data)
+        setProjects(data);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    getData();
+  }, []);
   const classes = useStyles();
   const [show, setShow] = useState(false);
 
@@ -54,27 +74,33 @@ const Projects = () => {
           <button onClick={() => setShow(true)} className="btn-openModal">
             Create New Project
           </button>
-          <Card className={classes.root} className="card">
-            <CardActionArea>
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Project 1
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  Project description
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions>
-              <Button className="btn" size="small" color="primary">
-                Notes
-              </Button>
-              <Button className="btn" size="small" color="primary">
-                Add a Task
-              </Button>
-            </CardActions>
-          </Card>
           <ProjectModal show={show} close={closeModalHandler} />
+          {projects.map((item) => (
+            <Card className={classes.root} className="card">
+              <CardActionArea>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {item.projectname}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    {item.projectdesc}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button className="btn" size="small" color="primary">
+                  Notes
+                </Button>
+                <Button className="btn" size="small" color="primary">
+                  Add a Task
+                </Button>
+              </CardActions>
+            </Card>
+          ))}
         </Typography>
       </Box>
     </>

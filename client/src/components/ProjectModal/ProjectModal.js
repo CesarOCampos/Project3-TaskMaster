@@ -1,7 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "./style.css"
+//import { Input } from "../Form";
 
 const ProjectModal = ({ show, close }) => {
+
+    const [projectName, setProjectName] = useState();
+    const [projectDesc, setProjectDesc] = useState();
+
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+            if (projectName && projectDesc) {
+                const response = await fetch('/api/projects', {
+                    method: 'POST',
+                    body: JSON.stringify({ projectname:projectName, projectdesc:projectDesc }),
+                    headers: { 'Content-Type': 'application/json' },
+                    });
+                
+                    if (response.ok) {
+                    console.log("ya");
+                    window.location.reload(false);
+                    
+                    } else {
+                    alert(response.statusText);
+                    }
+            };
+    }
+    
+
+        
+    
     return(
         <div className="modal-wrapper"
             style={{
@@ -16,14 +44,25 @@ const ProjectModal = ({ show, close }) => {
             <div className="modal-content">
                 <div className="modal-body">
                     <h4>Project Name</h4>
-                    <input className="input-name"></input>
-                    <h4>Project description</h4>
-                    <input className="input-desc"></input>
-                    <h4>Team Members</h4>
-                    <input className="input-team"></input>
+                    <input
+                onChange={event => setProjectName(event.target.value)}
+                name="projectname"
+                placeholder="Project Name"
+                />
+                    <h4>Project Description</h4>
+                    <input
+                onChange={event => setProjectDesc(event.target.value)}
+                name="projectdesc"
+                placeholder="Project Description"
+                />
                 </div>
                 <div className="modal-footer">
-                    <button className="btn-submit">Submit</button>
+                    <button
+                    className="btn-submit"
+                    disabled={!(projectName && projectDesc)}
+                    onClick={handleFormSubmit}
+                    
+                    >Submit</button>
                 </div>
             </div>
         </div>
