@@ -19,21 +19,10 @@ Project.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    task_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'task',
-        key: 'id',
-        unique: false
-      },
-    },
-    student_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'student',
-        key: 'id',
-        unique: false
-      },
+    projectstatus: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "NOT STARTED"
     },
   },
   {

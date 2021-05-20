@@ -8,7 +8,7 @@ import PermContactCalendarIcon from "@material-ui/icons/PermContactCalendar";
 import GestureIcon from "@material-ui/icons/Gesture";
 import {
   Toolbar,
-  Typography,
+  // Typography,
   Box,
   AppBar,
   Divider,

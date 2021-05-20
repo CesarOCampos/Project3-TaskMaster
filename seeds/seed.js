@@ -8,6 +8,11 @@ const projectData = require('./ProjectData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
+  const project = await Project.bulkCreate(projectData, {
+    individualHooks: true,
+    returning: true,
+  });
+
   const student = await Student.bulkCreate(studentData, {
     individualHooks: true,
     returning: true,
@@ -22,11 +27,7 @@ const seedDatabase = async () => {
   //   returning: true,
   // });
 
-  const project = await Project.bulkCreate(projectData, {
-    individualHooks: true,
-    returning: true,
-  });
-
+  
   process.exit(0);
 };
 

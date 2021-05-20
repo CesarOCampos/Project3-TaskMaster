@@ -18,7 +18,23 @@ Task.init(
     status: {
       type: DataTypes.STRING,
       allowNull: true,
-    }
+      defaultValue: "UNASSIGNED",
+    },
+    student_id: {
+      type: DataTypes.DECIMAL(32,0),
+      references: {
+        model: 'student',
+        key: 'id',
+        unique: false
+      },
+    },
+    project_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'project',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,
