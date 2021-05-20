@@ -57,7 +57,6 @@ const Profile = () => {
       });
       const data = await response.json();
 
-      console.log("Data: ", data[0].project);
       setProject(data[0].project);
     } catch (err) {
       console.log(err);
@@ -66,14 +65,12 @@ const Profile = () => {
 
   async function getTasks() {
     try {
-      console.log("In getTasks");
       const response = await fetch('/api/tasks/' + student_id, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
       });
       const data = await response.json();
 
-      console.log("Task Data: ", data);
       setTasks(data);
     } catch (err) {
       console.log(err)
@@ -158,7 +155,7 @@ const Profile = () => {
                   </Typography>
           
               {tasks.map(task => (
-                  <Typography variant="h6" color="textSecondary" component="p">
+                  <Typography key={task.id} variant="h6" color="textSecondary" component="p">
                   {task.taskname} ({task.status})
                   </Typography>
               ))}
