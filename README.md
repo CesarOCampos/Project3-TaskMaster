@@ -52,7 +52,7 @@ Don’t ever miss a deadline, with TaskMaster!
 
 ## Live Link
 
-https://cgms-taskmaster.herokuapp.com/
+https://taskmaster-official.herokuapp.com/
 
 ## License 
 
