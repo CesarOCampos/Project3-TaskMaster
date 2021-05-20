@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -18,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TaskModal = ({ see, close }) => {
-
         const classes = useStyles();
         const [student, setStudent] = React.useState('');
         const [taskName, setTaskName] = useState();
@@ -94,9 +94,6 @@ const TaskModal = ({ see, close }) => {
                                 <MenuItem value={4}>Susan Fujii</MenuItem>
                             </Select>
                         </FormControl>
-
-
-
                     </div>
                     <div className="modal-footer">
                     <button

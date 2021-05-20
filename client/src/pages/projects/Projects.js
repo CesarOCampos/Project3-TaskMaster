@@ -7,13 +7,12 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import "./style.css"
+import "./style.css";
 import ProjectModal from "../../components/ProjectModal/ProjectModal";
 import "../../components/ProjectModal/style.css"
 import { useAuth0 } from "@auth0/auth0-react";
 import TaskModal from "../../components/TaskModal/TaskModal";
 import "../../components/TaskModal/style.css"
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,8 +45,6 @@ const useStyles = makeStyles((theme) => ({
   
 }));
 
-
-
 const Projects = () => {
 
   const { user } = useAuth0();
@@ -57,7 +54,6 @@ const Projects = () => {
   student_id = student_id[1];
 
   const [projects, setProjects] = useState([]);
-
 
   useEffect(
     () => {
@@ -75,9 +71,7 @@ const Projects = () => {
           console.log(err)
         }
       }
-      
       getData();
-        
     },[]
   )
   const classes = useStyles();
@@ -115,11 +109,9 @@ const Projects = () => {
         </Button>
       </CardActions>
       {
-            see &&(<TaskModal see={see} close={closeTaskHandler}/>)
-          }
-    </Card>
-    
-          ))}
+        see &&(<TaskModal see={see} close={closeTaskHandler}/>)
+      }
+    </Card>))}
         </Typography>
       </Box>
     </>
