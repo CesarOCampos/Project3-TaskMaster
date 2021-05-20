@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mainContainer: {
     background: "#A3BCB6",
-    height: "150vh",
+    height: "auto",
     opacity: ".95",
   },
   heading: {
@@ -77,6 +77,12 @@ const Projects = () => {
   const classes = useStyles();
   const [show, setShow] = useState(false);
   const [see, setSee] = useState(false);
+  const [clickedTask, setClickedTask] = useState("")
+  const showModalHandler = (itemId) => {
+    setClickedTask(itemId);
+    setSee(true);
+  }
+
 
   const closeModalHandler = () => setShow(false);
   const closeTaskHandler = () => setSee(false);
@@ -104,12 +110,12 @@ const Projects = () => {
       <CardActions>
         <Button className="btn" size="small" color="primary">
         </Button>
-        <Button onClick={() => setSee(true)} className="btn" size="small" color="primary">
+        <Button onClick={() => showModalHandler(item.id)} className="btn" size="small" color="primary">
           Add a Task
         </Button>
       </CardActions>
       {
-        see &&(<TaskModal see={see} close={closeTaskHandler}/>)
+        see &&(<TaskModal dataId={item.id} see={clickedTask === item.id} close={closeTaskHandler}/>)
       }
     </Card>))}
         </Typography>

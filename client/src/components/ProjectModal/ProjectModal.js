@@ -43,13 +43,13 @@ const ProjectModal = ({ show, close }) => {
                     <input
                 onChange={event => setProjectName(event.target.value)}
                 name="projectname"
-                placeholder="Project Name"
+                placeholder="enter project name"
                 />
                     <h4>Project Description</h4>
                     <input
                 onChange={event => setProjectDesc(event.target.value)}
                 name="projectdesc"
-                placeholder="Project Description"
+                placeholder="enter project description"
                 />
                 </div>
                 <div className="modal-footer">
