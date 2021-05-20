@@ -48,6 +48,13 @@ Don’t ever miss a deadline, with TaskMaster!
 
 ## Mock-Up
 
+<img width="1134" alt="Screen Shot 2021-05-20 at 4 39 38 PM" src="https://user-images.githubusercontent.com/79765040/119052899-e72c5600-b98a-11eb-8265-31cbb105fdbe.png">
+<img width="1137" alt="Screen Shot 2021-05-20 at 4 40 23 PM" src="https://user-images.githubusercontent.com/79765040/119052901-e85d8300-b98a-11eb-9576-2b750c04a16d.png">
+<img width="860" alt="Screen Shot 2021-05-20 at 4 40 38 PM" src="https://user-images.githubusercontent.com/79765040/119052902-e8f61980-b98a-11eb-935b-7dbedad0782e.png">
+<img width="1130" alt="Screen Shot 2021-05-20 at 4 41 02 PM" src="https://user-images.githubusercontent.com/79765040/119052904-e8f61980-b98a-11eb-803d-0c6247dfaf81.png">
+<img width="1096" alt="Screen Shot 2021-05-20 at 4 41 13 PM" src="https://user-images.githubusercontent.com/79765040/119052906-e98eb000-b98a-11eb-8bd7-a0c739b5850d.png">
+<img width="1123" alt="Screen Shot 2021-05-20 at 4 41 44 PM" src="https://user-images.githubusercontent.com/79765040/119052908-e98eb000-b98a-11eb-9c68-b55043803389.png">
+<img width="1092" alt="Screen Shot 2021-05-20 at 4 44 11 PM" src="https://user-images.githubusercontent.com/79765040/119052909-ea274680-b98a-11eb-9645-bfa2780fdd6a.png">
 
 
 ## Live Link
