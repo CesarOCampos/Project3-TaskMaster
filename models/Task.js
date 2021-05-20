@@ -21,7 +21,7 @@ Task.init(
       defaultValue: "UNASSIGNED",
     },
     student_id: {
-      type: DataTypes.DECIMAL(32,0),
+      type: DataTypes.INTEGER,
       references: {
         model: 'student',
         key: 'id',

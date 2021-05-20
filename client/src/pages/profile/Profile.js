@@ -43,8 +43,19 @@ const Profile = () => {
   const { name, picture, email } = user;
   const classes = useStyles();
 
-  let student_id = user.sub.split("|");
-  student_id = student_id[1];
+  let student_id = 0;
+  let student_auth0id = user.sub.split("|");
+  student_auth0id = student_auth0id[1];
+
+  if (student_auth0id == "103887618658368306919") {
+    student_id = 1;
+  } else if (student_auth0id == "113019573704872307362") {
+    student_id = 2;
+  } else if (student_auth0id == "105979323143183229328") {
+    student_id = 3;
+  } else if (student_auth0id == "103741485630994885413") {
+    student_id = 4;
+  }
 
   const [project, setProject] = useState({});
   const [tasks, setTasks] = useState([]);
@@ -113,7 +124,7 @@ const Profile = () => {
                 </Typography>
 
                 <Typography variant="body2" color="textSecondary" component="p">
-                  UniqueID : {student_id}
+                  UniqueID : {student_auth0id}
                 </Typography>
                   {/* {JSON.stringify(user, null, 2)} */}
                 
