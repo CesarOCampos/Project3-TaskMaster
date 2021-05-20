@@ -10,6 +10,9 @@ import Button from '@material-ui/core/Button';
 import "./style.css"
 import ProjectModal from "../../components/ProjectModal/ProjectModal";
 import "../../components/ProjectModal/style.css"
+import { useAuth0 } from "@auth0/auth0-react";
+import TaskModal from "../../components/TaskModal/TaskModal";
+import "../../components/TaskModal/style.css"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -47,6 +50,12 @@ const useStyles = makeStyles((theme) => ({
 
 const Projects = () => {
 
+  const { user } = useAuth0();
+  const { name, picture, email } = user;
+
+  let student_id = user.sub.split("|");
+  student_id = student_id[1];
+
   const [projects, setProjects] = useState([]);
 
 
@@ -73,15 +82,19 @@ const Projects = () => {
   )
   const classes = useStyles();
   const [show, setShow] = useState(false);
+  const [see, setSee] = useState(false);
 
   const closeModalHandler = () => setShow(false);
+  const closeTaskHandler = () => setSee(false);
   return (
     <>
       <Navbar />
       <Box component="header" className={classes.mainContainer}>
         <Typography variant="h4" align="center" className={classes.heading}>
           <button onClick={() => setShow(true)} className="btn-openModal">Create New Project</button>
-          <ProjectModal show={show} close={closeModalHandler}/>
+          {
+            show &&(<ProjectModal show={show} close={closeModalHandler}/>)
+          }
           {projects.map(item => (
     <Card className={classes.root} className="card">
       <CardActionArea>
@@ -96,13 +109,16 @@ const Projects = () => {
       </CardActionArea>
       <CardActions>
         <Button className="btn" size="small" color="primary">
-          Notes
         </Button>
-        <Button className="btn" size="small" color="primary">
+        <Button onClick={() => setSee(true)} className="btn" size="small" color="primary">
           Add a Task
         </Button>
       </CardActions>
+      {
+            see &&(<TaskModal see={see} close={closeTaskHandler}/>)
+          }
     </Card>
+    
           ))}
         </Typography>
       </Box>
