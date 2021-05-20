@@ -1,8 +1,9 @@
 # Project3-TaskMaster
+We are creating a Task Management Application in which students can use to keep track of projects and the tasks they need to do to achieve success and completion in their projects.
 
 #### Table of contents
 
-1. [Project Task](#project-task)
+1. [Project Description](#project-description)
 2. [User Story](#user-story)
 3. [Installation Instructions](#installation-instruction)
 4. [Test Instructions](#test-instruction)
@@ -13,8 +14,16 @@
 9. [License](#license)
 10. [Questions](#questions)
 
-## Project Task
+## Project Description
 
+Do you feel like you and your team are never on the same page? 
+Did someone do your task because of a miscommunication and now you have two different versions of the same component? 
+Maybe you can't articulate the picture you have in your head but can draw it for your colleagues to understand.
+TaskMaster can help with organizing your group’s tasks, 
+keeping track of projects, and in the future
+collaborate ideas through our drawing board, 
+and keep everyone on the right track
+Don’t ever miss a deadline, with TaskMaster!
 
 
 ## User Story
@@ -23,11 +32,11 @@
 
 ## Installation Instructions
 
-    N/A
+    npm install
 
 ## Test Instructions
 
-    N/A
+    npm run start
 
 ## Usage Information
 
@@ -43,10 +52,21 @@
 
 ## Live Link
 
-
+https://cgms-taskmaster.herokuapp.com/
 
 ## License 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
 
 ## Questions
+Email Cesar at cesarorlandocampos@gmail.com
+Find me on GitHub [CesarOCampos](http://github.com/CesarOCampos)
+
+Email Susan at susan.fujii@me.com
+Find me on GitHub [Srfujii](https://github.com/srfujii/)
+
+Email Matt at matt.r.miller09@gmail.com
+Find me on GitHub [Millmr](https://github.com/Millmr)
+
+Email George at georgehuliaris@mac.com
+Find me on GitHub [georgehuliaris](https://github.com/georgehuliaris)
