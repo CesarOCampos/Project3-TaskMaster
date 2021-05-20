@@ -1,47 +1,6 @@
 const router = require('express').Router();
 const { Student, Project, Task } = require("../../models");
 
-// GET all tasks
-router.get('/', async (req, res) => {
-  try {
-    const taskData = await Task.findAll({});
-    res.status(200).json(taskData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-})
-
-// router.get('/', async (req, res) => {
-//   try {
-//     const Task = await Student.findAll({
-//       // Add Book as a second model to JOIN with
-//       include: [{ model: LibraryCard }, { model: Book }],
-//     });
-//     res.status(200).json(Task);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-// // GET a single task
-// router.get('/:id', async (req, res) => {
-//   try {
-//     const Task = await Student.findByPk(req.params.id, {
-//       // Add Book as a second model to JOIN with
-//       include: [{ model: Task }, { model: Project }],
-//     });
-
-//     if (!Task) {
-//       res.status(404).json({ message: 'No reader found with that id!' });
-//       return;
-//     }
-
-//     res.status(200).json(readerData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 // CREATE a Task
 router.post("/", async (req, res) => {
   try {
@@ -51,6 +10,16 @@ router.post("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// GET all tasks
+router.get('/', async (req, res) => {
+  try {
+    const taskData = await Task.findAll({});
+    res.status(200).json(taskData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 // // DELETE a Task
 // router.delete('/:id', async (req, res) => {
