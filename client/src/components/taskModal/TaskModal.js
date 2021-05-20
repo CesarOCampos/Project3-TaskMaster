@@ -1,13 +1,13 @@
 import React from "react";
 import "./style.css";
 
-const TaskModal = ({ show, close }) => {
+const TaskModal = ({ see, close }) => {
     return (
         <div
         className="modal-wrapper"
         style={{
-            transform: show ? "translate(0vh)" : "translate(-100vh)",
-            opacity: show ? "1" : "0",
+            transform: see ? "translate(0vh)" : "translate(-100vh)",
+            opacity: see ? "1" : "0",
         }}
         >
         <div className="modal-header">
