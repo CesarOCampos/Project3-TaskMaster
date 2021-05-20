@@ -1,240 +1,117 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import {
-  // Avatar,
-  Box,
-  Grid,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Button,
-  Typography,
-} from "@material-ui/core";
+//import CardActionArea from "@material-ui/core/CardActionArea";
+import {Box, Grid, Card, CardActions, CardContent, Button, Typography,} from "@material-ui/core";
 import Navbar from "./Navbar";
-// import project1 from "../images/portfolio.png";
-// import project2 from "../images/password_gen.png";
-// import project3 from "../images/cryptostock.png";
-// import project4 from "../images/ExpressNext.png";
-// import avatar from "../thankfulme.png";
-import LaunchIcon from "@material-ui/icons/Launch";
-import GitHubIcon from "@material-ui/icons/GitHub";
+//import LaunchIcon from "@material-ui/icons/Launch";
+//import GitHubIcon from "@material-ui/icons/GitHub";
+//import SaveIcon from "@material-ui/icons/Save";
+import DeleteIcon from "@material-ui/icons/Delete";
 import TaskModal from "./TaskModal/TaskModal";
-import "../components/ProjectModal/style.css";
+import "../components/TaskModal/style.css";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
     background: "#233",
     height: "500vh",
     opacity: ".96",
+    display: "block"
   },
   cardContainer: {
-    maxWidth: 345,
+    maxWidth: 200,
     margin: "5rem auto",
-  },
-  avatar: {
-    display: "block",
-    margin: "0.5rem auto",
-    width: theme.spacing(12),
-    height: theme.spacing(12),
   },
 }));
 
 const Tasks = () => {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    async function obtainData() {
+      try {
+        const response = await fetch("/api/tasks", {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        });
+        const data = await response.json();
+        console.log(data);
+        setTasks(data);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    obtainData();
+  }, []);
+
   const classes = useStyles();
   const [show, setShow] = useState(false);
-  
   const closeModalHandler = () => setShow(false);
 
+  // const delButtonHandler = async (event) => {
+  //   event.preventDefault();
+  //   const id = tasks.id.value.trim();
+  //   console.log(tasks.id.value);
+  //   if (tasks.id) {
+  //       const response = await fetch(`/api/task/${id}`, {
+  //         method: "DELETE",
+  //         body: JSON.stringify({ id: id }),
+  //         headers: { "Content-Type": "application/json", },
+  //       });
+  //     (response.ok) ? document.location.replace('/api/tasks') : alert("Unable to delete task!");
+  //   }
+  // }
+
   return (
-    <Box component="div" className={classes.mainContainer}>
+    <>
       <Navbar />
-      <button onClick={() => setShow(true)} className="btn-openModal">
-        Create New Task
-      </button>
-      <TaskModal show={show} close={closeModalHandler} />
-      <Grid container justify="center">
-        {/* Project 1 */}
-        <Grid item xs={12} sm={8} md={6}>
-          <Card className={classes.cardContainer}>
-            <CardMedia
-              component="img"
-              alt="Task 1"
-              height="140"
-              // image={project1}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5">
-                Task 1
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Notes
-              </Typography>
-            </CardContent>
-
-            <CardActions>
-              <Button
-                href=""
-                target="_blank"
-                size="small"
-                color="#A3BCB6"
-                variant="contained"
-                startIcon={<GitHubIcon />}
-              >
-                GitHub
-              </Button>
-
-              <Button
-                size="small"
-                color="#A3BCB6"
-                href=""
-                target="_blank"
-                variant="contained"
-                startIcon={<LaunchIcon />}
-              >
-                Visit Page
-              </Button>
-            </CardActions>
-          </Card>
-        </Grid>
-        {/* Project 2 */}
-        <Grid item xs={12} sm={8} md={6}>
-          <Card className={classes.cardContainer}>
-            <CardMedia
-              component="img"
-              alt="Task 2"
-              height="140"
-              // image={project2}
-            />
-
-            <CardContent>
-              <Typography gutterBottom variant="h5">
-                Task 2
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Notes
-              </Typography>
-            </CardContent>
-
-            <CardActions>
-              <Button
-                href=""
-                target="_blank"
-                size="small"
-                color="#A3BCB6"
-                variant="contained"
-                startIcon={<GitHubIcon />}
-              >
-                GitHub
-              </Button>
-
-              <Button
-                size="small"
-                color="#A3BCB6"
-                href=""
-                target="_blank"
-                variant="contained"
-                startIcon={<LaunchIcon />}
-              >
-                Visit Page
-              </Button>
-            </CardActions>
-          </Card>
-        </Grid>
-
-        {/* Project 3 */}
-        <Grid item xs={12} sm={8} md={6}>
-          <Card className={classes.cardContainer}>
-            <CardMedia
-              component="img"
-              alt="Task 3"
-              height="140"
-              // image={project3}
-            />
-
-            <CardContent>
-              <Typography gutterBottom variant="h5">
-                Task 3
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Notes
-              </Typography>
-            </CardContent>
-
-            <CardActions>
-              <Button
-                href=""
-                size="small"
-                color="#A3BCB6"
-                target="_blank"
-                variant="contained"
-                startIcon={<GitHubIcon />}
-              >
-                GitHub
-              </Button>
-
-              <Button
-                size="small"
-                color="#A3BCB6"
-                href=""
-                target="_blank"
-                variant="contained"
-                startIcon={<LaunchIcon />}
-              >
-                Visit Page
-              </Button>
-            </CardActions>
-          </Card>
-        </Grid>
-
-        {/* Project 4 */}
-        <Grid item xs={12} sm={8} md={6}>
-          <Card className={classes.cardContainer}>
-            <CardMedia
-              component="img"
-              alt="Task 4"
-              height="140"
-              // image={project4}
-            />
-
-            <CardContent>
-              <Typography gutterBottom variant="h5">
-                Task 4
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Notes
-              </Typography>
-            </CardContent>
-
-            <CardActions>
-              <Button
-                href=""
-                target="_blank"
-                size="small"
-                color="#A3BCB6"
-                variant="contained"
-                startIcon={<GitHubIcon />}
-              >
-                GitHub
-              </Button>
-
-              <Button
-                size="small"
-                color="#A3BCB6"
-                href=""
-                target="_blank"
-                variant="contained"
-                startIcon={<LaunchIcon />}
-              >
-                Visit Page
-              </Button>
-            </CardActions>
-          </Card>
-        </Grid>
-      </Grid>
-      {/* <Avatar className={classes.avatar} src={avatar} alt="George Huliaris" /> */}
-    </Box>
+      <Box component="div" className={classes.mainContainer}>
+        {show && <TaskModal show={show} close={closeModalHandler} />}
+        {tasks.map((item) => (
+          <Grid container justify="center">
+            <Card className={classes.cardContainer} style={{width:200}}>
+              <CardContent align="center">
+                <Typography gutterBottom variant="h5">
+                  {item.id}
+                </Typography>
+                <Typography gutterBottom variant="h5">
+                  {item.taskname}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  {item.taskdesc}
+                </Typography>
+                <Typography gutterBottom variant="h5">
+                  {item.status}
+                </Typography>
+                <Typography>{item.projects}</Typography>
+              </CardContent>
+              <CardActions>
+                {/* <Button
+                  className={classes.button}
+                  color="primary"
+                  variant="contained"
+                  startIcon={<GitHubIcon />}>
+                  Project
+                </Button> */}
+                {/* <Button
+                  className={classes.button}
+                  color="primary"
+                  variant="contained"
+                  startIcon={<SaveIcon />}>
+                  Save
+                </Button> */}
+                <Button
+                  className={classes.button}
+                  color="secondary"
+                  variant="contained"
+                  startIcon={<DeleteIcon />}
+                // onClick={delButtonHandler}
+                >Delete
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>))}
+      </Box>
+    </>
   );
 };
 
