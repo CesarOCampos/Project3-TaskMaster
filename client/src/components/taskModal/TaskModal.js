@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import "./style.css";
 
-const TaskModal = ({ see, close }) => {
+const TaskModal = ({ see, close, dataId }) => {
     const [taskname, settaskname] = useState();
     const [taskStatus, setTaskStatus] = useState();
     
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-            if (taskname && taskStatus) {
-                const response = await fetch("/api/task", {
-                    method: 'POST',
-                    body: JSON.stringify({ TaskName: taskname, taskStatus: taskStatus }),
-                    headers: { 'Content-Type': 'application/json' },
-                });
+        console.log(dataId)
+                if (taskname && taskStatus) {
+                    const response = await fetch("/api/task", {
+                        method: 'POST',
+                        body: JSON.stringify({ TaskName: taskname, taskStatus: taskStatus }),
+                        headers: { 'Content-Type': 'application/json' },
+                    });
                 (response.ok) ? window.location.reload(false) : alert(response.statusText);
-        };
+            };
     }
 
     return (
@@ -39,7 +40,7 @@ const TaskModal = ({ see, close }) => {
                     <input className="input-team"></input>
                 </div>
                 <div className="modal-footer">
-                    <button className="btn-submit" disabled={!(taskname && taskStatus)} onClick={handleFormSubmit}>Submit</button>
+                    <button className="btn-submit"  onClick={handleFormSubmit}>Submit</button>
                 </div>
             </div>
         </div>
