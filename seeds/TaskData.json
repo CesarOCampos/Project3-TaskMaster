@@ -17,14 +17,14 @@
         "id": 3,
         "taskname": "Obtain Rachel's approval for project",
         "status": "OVERDUE",
-        "student_id": 4,
+        "student_id": 3,
         "project_id": 4
     },
     {
         "id": 4,
         "taskname": "Create seed data and seed the database",
-        "status": "UNASSIGNED",
-        "student_id": 4,
+        "status": "COMPLETE",
+        "student_id": 3,
         "project_id": 4
     },
     {

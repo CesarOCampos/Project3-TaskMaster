@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mainContainer: {
     background: "#A3BCB6",
-    height: "300vh",
+    height: "auto",
     opacity: ".95",
   },
   heading: {

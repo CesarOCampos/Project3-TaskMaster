@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const TaskModal = ({ see, close }) => {
+const TaskModal = ({ see, close, dataId }) => {
         const classes = useStyles();
         const [student, setStudent] = React.useState('');
         const [taskName, setTaskName] = useState();
@@ -34,7 +34,7 @@ const TaskModal = ({ see, close }) => {
                 taskname: taskName,
                 status: "IN PROGRESS",
                 student_id: student,
-                project_id: 2
+                project_id: dataId
             }
 
             const response = await fetch('/api/tasks', {

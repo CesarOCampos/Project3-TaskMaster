@@ -13,7 +13,7 @@ import "../components/TaskModal/style.css";
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
     background: "#233",
-    height: "500vh",
+    height: "auto",
     opacity: ".96",
     display: "block"
   },

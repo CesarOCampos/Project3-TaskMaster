@@ -54,7 +54,7 @@ const Header = () => {
         <Typography className={classes.subtitle} variant="h5">
           <Typed
             strings={[
-              "We can write whatever we want here if we decide to keep it",
+              "Your solution to project management",
             ]}
             startDelay={4700}
             typeSpeed={50}
