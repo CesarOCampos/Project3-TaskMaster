@@ -1,22 +1,15 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-<<<<<<< HEAD
-// import CardActionArea from "@material-ui/core/CardActionArea";
+//import CardActionArea from "@material-ui/core/CardActionArea";
 import {
-  // Avatar,
   Box,
   Grid,
   Card,
   CardActions,
   CardContent,
-  CardMedia,
   Button,
   Typography,
 } from "@material-ui/core";
-=======
-//import CardActionArea from "@material-ui/core/CardActionArea";
-import {Box, Grid, Card, CardActions, CardContent, Button, Typography,} from "@material-ui/core";
->>>>>>> c07c2861b3b1fd6e2d963013a172c07e88c58ea6
 import Navbar from "./Navbar";
 //import LaunchIcon from "@material-ui/icons/Launch";
 //import GitHubIcon from "@material-ui/icons/GitHub";
@@ -30,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     background: "#233",
     height: "500vh",
     opacity: ".96",
-    display: "block"
+    display: "block",
   },
   cardContainer: {
     maxWidth: 200,
@@ -60,10 +53,6 @@ const Tasks = () => {
 
   const classes = useStyles();
   const [show, setShow] = useState(false);
-<<<<<<< HEAD
-
-=======
->>>>>>> c07c2861b3b1fd6e2d963013a172c07e88c58ea6
   const closeModalHandler = () => setShow(false);
 
   // const delButtonHandler = async (event) => {
@@ -87,7 +76,7 @@ const Tasks = () => {
         {show && <TaskModal show={show} close={closeModalHandler} />}
         {tasks.map((item) => (
           <Grid container justify="center">
-            <Card className={classes.cardContainer} style={{width:200}}>
+            <Card className={classes.cardContainer} style={{ width: 200 }}>
               <CardContent align="center">
                 <Typography gutterBottom variant="h5">
                   {item.id}
@@ -123,12 +112,14 @@ const Tasks = () => {
                   color="secondary"
                   variant="contained"
                   startIcon={<DeleteIcon />}
-                // onClick={delButtonHandler}
-                >Delete
+                  // onClick={delButtonHandler}
+                >
+                  Delete
                 </Button>
               </CardActions>
             </Card>
-          </Grid>))}
+          </Grid>
+        ))}
       </Box>
     </>
   );
