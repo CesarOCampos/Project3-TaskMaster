@@ -6,7 +6,7 @@ class Student extends Model {}
 Student.init(
   {
     id: {
-      type: DataTypes.DECIMAL(24,0),
+      type: DataTypes.DECIMAL(32,0),
       allowNull: false,
       primaryKey: true,
       autoIncrement: false,
@@ -22,7 +22,14 @@ Student.init(
       validate: {
         isEmail: true,
       },
-    }
+    },
+    project_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'project',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,

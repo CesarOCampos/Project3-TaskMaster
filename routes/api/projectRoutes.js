@@ -33,11 +33,13 @@ router.get('/:id', async (req, res) => {
       console.log("\n\nHELLO I HIT THE ROUTE");
       console.log("Req.params.id: ", req.params.id);
 
-      const projectData = await Project.findAll({
-        // include: [{ model:Task }],
+      const projectData = await Student.findAll({
+        include: [{ model:Project }],
         // include: [{ model: Task, through: Project, as: 'project_tasks' }], 
-        where: { student_id: req.params.id }
+        where: { id: req.params.id },
+        // group: 'id' 
       });
+
     // const user = userData.get({ plain: true });
     res.json(projectData);
     console.log("ProjectData: ", projectData);

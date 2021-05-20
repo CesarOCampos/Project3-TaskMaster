@@ -46,10 +46,10 @@ const Profile = () => {
   let student_id = user.sub.split("|");
   student_id = student_id[1];
 
-  const [projects, setProjects] = useState([]);
+  const [project, setProject] = useState({});
   const [tasks, setTasks] = useState([]);
 
-  async function getProjects() {
+  async function getProject() {
     try {
       const response = await fetch('/api/projects/' + student_id, {
         method: 'GET',
@@ -57,8 +57,8 @@ const Profile = () => {
       });
       const data = await response.json();
 
-      console.log("Data: ", data);
-      setProjects(data);
+      console.log("Data: ", data[0].project);
+      setProject(data[0].project);
     } catch (err) {
       console.log(err);
     }
@@ -82,8 +82,8 @@ const Profile = () => {
 
   useEffect(
     () => {
-      getProjects();
-      // getTasks();
+      getProject();
+      getTasks();
     },[]
   )
 
@@ -107,11 +107,11 @@ const Profile = () => {
                   {name}
                 </Typography>
 
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="h6" color="textSecondary" component="p">
                   UserName: {user.nickname}
                 </Typography>
 
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="h6" color="textSecondary" component="p">
                   Email Address: {email}
                 </Typography>
 
@@ -124,28 +124,47 @@ const Profile = () => {
             </CardActionArea>
           </Card>
 
-          {projects.map(item => (
-            <Card className={classes.root} className="card">
+          <Card className={classes.root} className="card">
               <CardActionArea>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Current Project: {item.projectname}
+                    Current Project: {project.projectname}
                   </Typography>
+                  <Typography variant="h6" color="textSecondary" component="p">
+                    {project.projectdesc}
+                  </Typography>
+
                   <Typography variant="body2" color="textSecondary" component="p">
-                    {item.projectdesc}
+                  <img
+                    src="./projectprogress.png"
+                    alt="Profile"
+                  />
                   </Typography>
+
+                  <Typography variant="h6" color="textSecondary" component="p">
+                    Project Status: {project.projectstatus}
+                  </Typography>
+                
                 </CardContent>
               </CardActionArea>
-              <CardActions>
-                <Button className="btn" size="small" color="primary">
-                  Notes
-                </Button>
-                <Button className="btn" size="small" color="primary">
-                  Add a Task
-                </Button>
-              </CardActions>
+              
             </Card>
-          ))}
+
+          
+            <Card className={classes.root} className="card">
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    My Open Tasks:
+                  </Typography>
+          
+              {tasks.map(task => (
+                  <Typography variant="h6" color="textSecondary" component="p">
+                  {task.taskname} ({task.status})
+                  </Typography>
+              ))}
+          
+                </CardContent>
+            </Card>
 
         </Typography>
       </Box>

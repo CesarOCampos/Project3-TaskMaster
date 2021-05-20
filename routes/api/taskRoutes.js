@@ -21,9 +21,11 @@ router.get('/:id', async (req, res) => {
       console.log("TASKS ROUTE");
       console.log("Req.params.id: ", req.params.id);
 
-      const taskData = await Student.findByPk(req.params.id, {
-        // JOIN with travellers, using the Trip through table
-        include: [{ model: Task, through: Project, as: 'project_tasks' }]
+      const taskData = await Task.findAll({
+        // include: [{ model:Task }],
+        // include: [{ model: Task, through: Project, as: 'project_tasks' }], 
+        where: { student_id: req.params.id },
+        // group: 'id' 
       });
       // const taskData = await Task.findAll({ 
       //   include: [{ model: Project }], 
