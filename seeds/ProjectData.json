@@ -1,14 +1,26 @@
 [
     {
-        "projectname": "Track my Pack",
-        "projectdesc": "Tired of navigating between applications to track a package? Well stop! Track my Pack is here to help you find your package!",
-        "task_id": 1,
-        "student_id": 105979323143183229328
-    },
-    {
+        "id": 1,
         "projectname": "Stock Market Hacker",
         "projectdesc": "This app will give you the latest details about the Stock Market and also buying and trading advice.",
-        "task_id": 2,
-        "student_id": 103887618658368306919
+        "projectstatus": "IN PROGRESS"
+    },
+    {
+        "id": 2,
+        "projectname": "Track my Pack",
+        "projectdesc": "Tired of navigating between applications to track a package? Well stop! Track my Pack is here to help you find your package!",
+        "projectstatus": "IN PROGRESS"
+    },
+    {
+        "id": 3,
+        "projectname": "Epic Game Development",
+        "projectdesc": "This game will be the coolest ever.",
+        "projectstatus": "IN PROGRESS"
+    },
+    {
+        "id": 4,
+        "projectname": "ExperienceNext",
+        "projectdesc": "Experience Next-Level Service in the comfort of your home.",
+        "projectstatus": "IN PROGRESS"
     }
 ]
