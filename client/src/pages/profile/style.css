@@ -3,6 +3,8 @@
     width: 80%;
     max-width: 800px;
     margin: 4rem auto;
+    height: 100%;
+    text-align: left;
 }
 
 .btn {
